@@ -15,6 +15,7 @@
 		A45E2809251363F800A92411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45E2807251363F800A92411 /* LaunchScreen.storyboard */; };
 		A45E2814251363F900A92411 /* PhotoFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E2813251363F900A92411 /* PhotoFilterTests.swift */; };
 		A45E281F251363F900A92411 /* PhotoFilterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E281E251363F900A92411 /* PhotoFilterUITests.swift */; };
+		A45E28302513652400A92411 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E282F2513652400A92411 /* PhotosCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A45E281A251363F900A92411 /* PhotoFilterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoFilterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45E281E251363F900A92411 /* PhotoFilterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFilterUITests.swift; sourceTree = "<group>"; };
 		A45E2820251363F900A92411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A45E282F2513652400A92411 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +101,10 @@
 		A45E27FB251363F700A92411 /* PhotoFilter */ = {
 			isa = PBXGroup;
 			children = (
-				A45E27FC251363F700A92411 /* AppDelegate.swift */,
-				A45E27FE251363F700A92411 /* SceneDelegate.swift */,
-				A45E2800251363F700A92411 /* ViewController.swift */,
-				A45E2802251363F700A92411 /* Main.storyboard */,
-				A45E2805251363F800A92411 /* Assets.xcassets */,
-				A45E2807251363F800A92411 /* LaunchScreen.storyboard */,
+				A45E28362513656C00A92411 /* Application */,
+				A45E28352513656400A92411 /* View */,
+				A45E28372513658500A92411 /* View Controller */,
+				A45E28342513655D00A92411 /* Supporting Files */,
 				A45E280A251363F800A92411 /* Info.plist */,
 			);
 			path = PhotoFilter;
@@ -126,6 +126,41 @@
 				A45E2820251363F900A92411 /* Info.plist */,
 			);
 			path = PhotoFilterUITests;
+			sourceTree = "<group>";
+		};
+		A45E28342513655D00A92411 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A45E2805251363F800A92411 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A45E28352513656400A92411 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A45E2807251363F800A92411 /* LaunchScreen.storyboard */,
+				A45E2802251363F700A92411 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A45E28362513656C00A92411 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A45E27FC251363F700A92411 /* AppDelegate.swift */,
+				A45E27FE251363F700A92411 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A45E28372513658500A92411 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A45E2800251363F700A92411 /* ViewController.swift */,
+				A45E282F2513652400A92411 /* PhotosCollectionViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +296,7 @@
 				A45E2801251363F700A92411 /* ViewController.swift in Sources */,
 				A45E27FD251363F700A92411 /* AppDelegate.swift in Sources */,
 				A45E27FF251363F700A92411 /* SceneDelegate.swift in Sources */,
+				A45E28302513652400A92411 /* PhotosCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
