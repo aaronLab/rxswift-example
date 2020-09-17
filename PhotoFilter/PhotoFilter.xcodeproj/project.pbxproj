@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5CF5D4D2659EDFDCF5855EA1 /* Pods_PhotoFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35D6F89BD7A0E1912969510 /* Pods_PhotoFilter.framework */; };
+		A415472A25137A0C001DFF98 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415472925137A0C001DFF98 /* PhotoCollectionViewCell.swift */; };
 		A45E27FD251363F700A92411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E27FC251363F700A92411 /* AppDelegate.swift */; };
 		A45E27FF251363F700A92411 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E27FE251363F700A92411 /* SceneDelegate.swift */; };
 		A45E2801251363F700A92411 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E2800251363F700A92411 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		43061C4A4F7D58C6E0A7D361 /* Pods-PhotoFilterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoFilterTests.release.xcconfig"; path = "Target Support Files/Pods-PhotoFilterTests/Pods-PhotoFilterTests.release.xcconfig"; sourceTree = "<group>"; };
 		5B4F3EB50520463A1C4D52BE /* Pods_PhotoFilterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoFilterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9082BA197A15B8A92EF5E6DD /* Pods-PhotoFilter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoFilter.debug.xcconfig"; path = "Target Support Files/Pods-PhotoFilter/Pods-PhotoFilter.debug.xcconfig"; sourceTree = "<group>"; };
+		A415472925137A0C001DFF98 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A45E27F9251363F700A92411 /* PhotoFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45E27FC251363F700A92411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A45E27FE251363F700A92411 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +105,6 @@
 				AE22C15528239C7B8445AB5D /* Pods-PhotoFilterTests.debug.xcconfig */,
 				43061C4A4F7D58C6E0A7D361 /* Pods-PhotoFilterTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -182,6 +183,7 @@
 			children = (
 				A45E2807251363F800A92411 /* LaunchScreen.storyboard */,
 				A45E2802251363F700A92411 /* Main.storyboard */,
+				A415472925137A0C001DFF98 /* PhotoCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -443,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A45E2801251363F700A92411 /* ViewController.swift in Sources */,
+				A415472A25137A0C001DFF98 /* PhotoCollectionViewCell.swift in Sources */,
 				A45E27FD251363F700A92411 /* AppDelegate.swift in Sources */,
 				A45E27FF251363F700A92411 /* SceneDelegate.swift in Sources */,
 				A45E28302513652400A92411 /* PhotosCollectionViewController.swift in Sources */,
