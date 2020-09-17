@@ -7,6 +7,7 @@ target 'HelloRxSwift' do
 
   # Pods for HelloRxSwift
   pod 'RxSwift', '~> 5'
+  pod 'RxCocoa', '~> 5'
 
   target 'HelloRxSwiftTests' do
     inherit! :search_paths

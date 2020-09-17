@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,7 @@
 		819E3BBC572E9B1A1B8C2FD9 /* Pods_HelloRxSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HelloRxSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C6FB3412A3E720ECABE946 /* Pods-HelloRxSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloRxSwiftTests.release.xcconfig"; path = "Target Support Files/Pods-HelloRxSwiftTests/Pods-HelloRxSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		9FDCCC68EFD08AF070EBBCA6 /* Pods-HelloRxSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HelloRxSwiftTests.debug.xcconfig"; path = "Target Support Files/Pods-HelloRxSwiftTests/Pods-HelloRxSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A45E27DC2513559700A92411 /* RxSwiftPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RxSwiftPlayground.playground; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A464832625135387007BBCEA /* HelloRxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloRxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A464832925135387007BBCEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A464832B25135387007BBCEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,7 +102,6 @@
 				9FDCCC68EFD08AF070EBBCA6 /* Pods-HelloRxSwiftTests.debug.xcconfig */,
 				88C6FB3412A3E720ECABE946 /* Pods-HelloRxSwiftTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,6 +140,7 @@
 		A464832825135387007BBCEA /* HelloRxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				A45E27DC2513559700A92411 /* RxSwiftPlayground.playground */,
 				A464832925135387007BBCEA /* AppDelegate.swift */,
 				A464832B25135387007BBCEA /* SceneDelegate.swift */,
 				A464832D25135387007BBCEA /* ViewController.swift */,
@@ -589,6 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6U769Q36UT;
 				INFOPLIST_FILE = HelloRxSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -609,6 +611,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6U769Q36UT;
 				INFOPLIST_FILE = HelloRxSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
