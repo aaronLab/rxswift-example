@@ -19,14 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qxH-XQ-uv8">
-                                <rect key="frame" x="0.0" y="88" width="375" height="609"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="568.33333333333337"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0x-RF-uIE">
-                                <rect key="frame" x="148.66666666666666" y="717" width="78" height="30"/>
+                                <rect key="frame" x="148.66666666666666" y="676.33333333333337" width="78" height="30"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <state key="normal" title="Apply Filter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="filterButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DC4-gD-Ao4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -35,7 +38,7 @@
                             <constraint firstItem="qxH-XQ-uv8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2ue-Nt-8TP"/>
                             <constraint firstItem="qxH-XQ-uv8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EGq-3Q-izz"/>
                             <constraint firstItem="f0x-RF-uIE" firstAttribute="top" secondItem="qxH-XQ-uv8" secondAttribute="bottom" constant="20" id="HmN-nD-ukw"/>
-                            <constraint firstItem="qxH-XQ-uv8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.75" id="gJq-5q-4Ue"/>
+                            <constraint firstItem="qxH-XQ-uv8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" id="gJq-5q-4Ue"/>
                             <constraint firstItem="f0x-RF-uIE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hJO-nR-UBw"/>
                             <constraint firstItem="qxH-XQ-uv8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="jbM-jG-iAh"/>
                         </constraints>
@@ -48,6 +51,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterButton" destination="f0x-RF-uIE" id="IIB-3j-nYF"/>
                         <outlet property="photoImageView" destination="qxH-XQ-uv8" id="YgU-SX-alA"/>
                     </connections>
                 </viewController>

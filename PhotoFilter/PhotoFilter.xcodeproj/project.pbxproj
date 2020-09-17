@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5CF5D4D2659EDFDCF5855EA1 /* Pods_PhotoFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F35D6F89BD7A0E1912969510 /* Pods_PhotoFilter.framework */; };
 		A415472A25137A0C001DFF98 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415472925137A0C001DFF98 /* PhotoCollectionViewCell.swift */; };
+		A415473525138364001DFF98 /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A415473425138364001DFF98 /* FilterService.swift */; };
 		A45E27FD251363F700A92411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E27FC251363F700A92411 /* AppDelegate.swift */; };
 		A45E27FF251363F700A92411 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E27FE251363F700A92411 /* SceneDelegate.swift */; };
 		A45E2801251363F700A92411 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45E2800251363F700A92411 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 		5B4F3EB50520463A1C4D52BE /* Pods_PhotoFilterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoFilterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9082BA197A15B8A92EF5E6DD /* Pods-PhotoFilter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoFilter.debug.xcconfig"; path = "Target Support Files/Pods-PhotoFilter/Pods-PhotoFilter.debug.xcconfig"; sourceTree = "<group>"; };
 		A415472925137A0C001DFF98 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		A415473425138364001DFF98 /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		A45E27F9251363F700A92411 /* PhotoFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A45E27FC251363F700A92411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A45E27FE251363F700A92411 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A415473925138505001DFF98 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A415473425138364001DFF98 /* FilterService.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		A45E27F0251363F700A92411 = {
 			isa = PBXGroup;
 			children = (
@@ -145,7 +155,8 @@
 			children = (
 				A45E28362513656C00A92411 /* Application */,
 				A45E28352513656400A92411 /* View */,
-				A45E28372513658500A92411 /* View Controller */,
+				A45E28372513658500A92411 /* Controller */,
+				A415473925138505001DFF98 /* Helper */,
 				A45E28342513655D00A92411 /* Supporting Files */,
 				A45E280A251363F800A92411 /* Info.plist */,
 			);
@@ -197,13 +208,13 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		A45E28372513658500A92411 /* View Controller */ = {
+		A45E28372513658500A92411 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				A45E2800251363F700A92411 /* ViewController.swift */,
 				A45E282F2513652400A92411 /* PhotosCollectionViewController.swift */,
 			);
-			path = "View Controller";
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -447,6 +458,7 @@
 				A45E2801251363F700A92411 /* ViewController.swift in Sources */,
 				A415472A25137A0C001DFF98 /* PhotoCollectionViewCell.swift in Sources */,
 				A45E27FD251363F700A92411 /* AppDelegate.swift in Sources */,
+				A415473525138364001DFF98 /* FilterService.swift in Sources */,
 				A45E27FF251363F700A92411 /* SceneDelegate.swift in Sources */,
 				A45E28302513652400A92411 /* PhotosCollectionViewController.swift in Sources */,
 			);
