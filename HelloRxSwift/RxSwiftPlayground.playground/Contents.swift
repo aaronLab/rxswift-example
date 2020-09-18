@@ -4,10 +4,19 @@ import RxSwift
 
 let disposeBag = DisposeBag()
 
-Observable.of(2, 4, 6, 7, 8)
-    .takeWhile { $0 % 2 == 0}
+let subject = PublishSubject<String>()
+let trigger = PublishSubject<String>()
+
+subject.takeUntil(trigger)
     .subscribe(onNext: {
         print($0)
     }).disposed(by: disposeBag)
 
-// -> 2, 3, 6
+subject.onNext("A")
+subject.onNext("B")
+
+trigger.onNext("X")
+
+subject.onNext("C")
+
+// -> A, B
