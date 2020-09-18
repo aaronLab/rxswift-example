@@ -10,6 +10,12 @@ import RxSwift
 
 class AddToDoViewController: UIViewController {
     
+    private let todoSubject = PublishSubject<ToDo>()
+    
+    var todoSubjectObservable: Observable<ToDo> {
+        return self.todoSubject.asObservable()
+    }
+    
     @IBOutlet weak var prioritySegmentedControl: UISegmentedControl!
     @IBOutlet weak var toDoTitleTextField: UITextField!
     
@@ -21,6 +27,9 @@ class AddToDoViewController: UIViewController {
         }
         
         let todo = ToDo(title: title, priority: priority)
+        self.todoSubject.onNext(todo)
+        
+        self.dismiss(animated: true, completion: nil)
         
     }
     

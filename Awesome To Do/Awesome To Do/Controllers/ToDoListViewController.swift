@@ -6,16 +6,35 @@
 //
 
 import UIKit
+import RxSwift
 
 class ToDoListViewController: UIViewController {
     
     @IBOutlet weak var prioritySegmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Large Title
         self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let navC = segue.destination as? UINavigationController,
+              let nextVC = navC.viewControllers.first as? AddToDoViewController else {
+            fatalError("Can't find the view controller")
+        }
+        
+        nextVC.todoSubjectObservable
+            .subscribe(onNext: { todo in
+                
+                print(todo)
+                
+            }).disposed(by: self.disposeBag)
+        
     }
     
 }
