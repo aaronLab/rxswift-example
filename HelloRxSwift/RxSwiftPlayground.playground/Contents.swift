@@ -4,8 +4,10 @@ import RxSwift
 
 let disposeBag = DisposeBag()
 
-Observable.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-    .filter { $0 % 2 == 0 }
+Observable.of("a", "b", "c", "d", "e", "f")
+    .skip(3)
     .subscribe(onNext: {
-        print($0)  // only even numbers will be printed
+        print($0)
     }).disposed(by: disposeBag)
+
+// ---> d, e, f
