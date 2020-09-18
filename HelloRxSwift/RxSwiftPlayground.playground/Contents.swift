@@ -4,19 +4,10 @@ import RxSwift
 
 let disposeBag = DisposeBag()
 
-let subject = PublishSubject<String>()
-let trigger = PublishSubject<String>()
-
-subject.skipUntil(trigger)
+Observable.of(1, 2, 3, 4, 5, 6)
+    .take(3)
     .subscribe(onNext: {
         print($0)
     }).disposed(by: disposeBag)
 
-subject.onNext("A")
-subject.onNext("B")
-
-trigger.onNext("X")
-
-subject.onNext("C")
-
-// ---> C
+// -> 1, 2, 3
