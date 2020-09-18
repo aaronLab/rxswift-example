@@ -60,15 +60,22 @@ class ToDoListViewController: UIViewController {
         
         if priority == nil {
             self.filteredToDos = self.todos.value
+            self.updateUI()
         } else {
             self.todos.map { items in
                 return items.filter { $0.priority == priority! }
             }.subscribe(onNext: { [weak self] items in
                 self?.filteredToDos = items
-                print(items)
+                self?.updateUI()
             }).disposed(by: disposeBag)
         }
         
+    }
+    
+    private func updateUI() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
 }
@@ -87,13 +94,13 @@ extension ToDoListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.todos.value.count
+        return self.filteredToDos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell", for: indexPath)
         
-        cell.textLabel?.text = self.todos.value[indexPath.row].title
+        cell.textLabel?.text = self.filteredToDos[indexPath.row].title
         
         return cell
     }
