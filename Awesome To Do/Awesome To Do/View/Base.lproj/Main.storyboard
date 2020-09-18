@@ -107,8 +107,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add a To Do" id="WZY-tE-oa2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="F1Z-fG-L4D"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="F1Z-fG-L4D">
+                            <connections>
+                                <action selector="savePressed" destination="R63-lY-dEn" id="WJ0-mf-d9P"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="prioritySegmentedControl" destination="raD-jO-a8N" id="vfF-WB-7Hq"/>
+                        <outlet property="toDoTitleTextField" destination="jTo-kd-pw0" id="Dl0-Gs-zS2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvp-YF-DQJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
