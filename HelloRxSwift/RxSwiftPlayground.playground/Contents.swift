@@ -4,10 +4,8 @@ import RxSwift
 
 let disposeBag = DisposeBag()
 
-Observable.of("a", "b", "c", "d", "e", "f")
-    .skip(3)
+Observable.of(2, 2, 3, 4, 4)
+    .skipWhile { $0 % 2 == 0 }
     .subscribe(onNext: {
         print($0)
     }).disposed(by: disposeBag)
-
-// ---> d, e, f
