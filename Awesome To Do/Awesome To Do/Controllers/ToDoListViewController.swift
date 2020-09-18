@@ -15,6 +15,7 @@ class ToDoListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var todos = BehaviorRelay<[ToDo]>(value: [])
+    private var filteredToDos = [ToDo]()
     
     let disposeBag = DisposeBag()
     
@@ -32,14 +33,41 @@ class ToDoListViewController: UIViewController {
         }
         
         nextVC.todoSubjectObservable
-            .subscribe(onNext: { todo in
+            .subscribe(onNext: { [unowned self] todo in
+                
+                let priority = Priority(rawValue: self.prioritySegmentedControl.selectedSegmentIndex - 1)
                 
                 var existingToDos = self.todos.value
                 existingToDos.append(todo)
                 
                 self.todos.accept(existingToDos)
                 
+                self.filterToDos(by: priority)
+                
             }).disposed(by: self.disposeBag)
+        
+    }
+    
+    @IBAction func priorityChanged(_ sender: UISegmentedControl) {
+        
+        let priority = Priority(rawValue: sender.selectedSegmentIndex - 1)
+        
+        self.filterToDos(by: priority)
+        
+    }
+    
+    private func filterToDos(by priority: Priority?) {
+        
+        if priority == nil {
+            self.filteredToDos = self.todos.value
+        } else {
+            self.todos.map { items in
+                return items.filter { $0.priority == priority! }
+            }.subscribe(onNext: { [weak self] items in
+                self?.filteredToDos = items
+                print(items)
+            }).disposed(by: disposeBag)
+        }
         
     }
     
@@ -64,6 +92,9 @@ extension ToDoListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell", for: indexPath)
+        
+        cell.textLabel?.text = self.todos.value[indexPath.row].title
+        
         return cell
     }
 }
