@@ -7,11 +7,14 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class ToDoListViewController: UIViewController {
     
     @IBOutlet weak var prioritySegmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
+    
+    private var todos = BehaviorRelay<[ToDo]>(value: [])
     
     let disposeBag = DisposeBag()
     
@@ -31,7 +34,10 @@ class ToDoListViewController: UIViewController {
         nextVC.todoSubjectObservable
             .subscribe(onNext: { todo in
                 
-                print(todo)
+                var existingToDos = self.todos.value
+                existingToDos.append(todo)
+                
+                self.todos.accept(existingToDos)
                 
             }).disposed(by: self.disposeBag)
         
@@ -53,7 +59,7 @@ extension ToDoListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.todos.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
