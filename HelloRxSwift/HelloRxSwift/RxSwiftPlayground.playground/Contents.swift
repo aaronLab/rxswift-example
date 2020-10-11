@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import RxCocoa
 
 let disposeBag = DisposeBag()
 
@@ -95,21 +96,39 @@ let disposeBag = DisposeBag()
 
 // MARK: - ReplaySubject
 
-let subject = ReplaySubject<String>.create(bufferSize: 2)
+//let subject = ReplaySubject<String>.create(bufferSize: 2)
+//
+//subject.onNext("1")
+//subject.onNext("2")
+//subject.onNext("3")
+//
+//subject.subscribe {
+//    print($0)
+//}
+//
+//subject.onNext("4")
+//subject.onNext("5")
+//subject.onNext("6")
+//
+//print("Subscription 2")
+//subject.subscribe {
+//    print($0)
+//}
 
-subject.onNext("1")
-subject.onNext("2")
-subject.onNext("3")
+// MARK: - BehaviorRelay
 
-subject.subscribe {
-    print($0)
-}
+let relay = BehaviorRelay(value: ["Item 1"])
 
-subject.onNext("4")
-subject.onNext("5")
-subject.onNext("6")
+//relay.value.append("Item")  // Error
+//relay.accept(relay.value + ["Item 2"])
 
-print("Subscription 2")
-subject.subscribe {
-    print($0)
-}
+var value = relay.value
+value.append("Item 2")
+value.append("Item 2")
+
+relay.accept(value)
+
+relay.asObservable()
+    .subscribe {
+        print($0)
+    }
