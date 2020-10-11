@@ -59,21 +59,33 @@ import RxSwift
 //    print("Disposed")
 //}.disposed(by: disposeBag)
 
-let disposebag = DisposeBag()
+//let disposebag = DisposeBag()
+//
+//let subject = PublishSubject<String>()
+//
+//subject.onNext("First")  // Not Work
+//
+//subject.subscribe { event in
+//    print(event)
+//}
+//
+//subject.onNext("Second")
+//subject.onNext("Third")
+//
+//subject.dispose()  // Will be ignored after this
+//
+//subject.onCompleted()
+//
+//subject.onNext("Fourth")
 
-let subject = PublishSubject<String>()
+let disposeBag = DisposeBag()
 
-subject.onNext("First")  // Not Work
+let subject = BehaviorSubject(value: "Initial Value")
+
+subject.onNext("Last Issue")
 
 subject.subscribe { event in
     print(event)
 }
 
-subject.onNext("Second")
-subject.onNext("Third")
-
-subject.dispose()  // Will be ignored after this
-
-subject.onCompleted()
-
-subject.onNext("Fourth")
+subject.onNext("Second Value")
