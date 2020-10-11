@@ -62,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="837.68115942028987" y="124.55357142857142"/>
         </scene>
-        <!--Photos Collection View Controller-->
+        <!--Select a photo...-->
         <scene sceneID="8fp-Vr-wIf">
             <objects>
                 <collectionViewController id="8Fj-DS-ZqH" customClass="PhotosCollectionViewController" customModule="Camera_Filter" customModuleProvider="target" sceneMemberID="viewController">
@@ -107,7 +107,7 @@
                             <outlet property="delegate" destination="8Fj-DS-ZqH" id="Es6-WL-wEr"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="cAJ-4f-OQL"/>
+                    <navigationItem key="navigationItem" title="Select a photo..." id="cAJ-4f-OQL"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Uy-dx-OSt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -31,16 +31,31 @@ class ViewController: UIViewController {
         photosCVC.selectedPhoto.subscribe(onNext: { [ weak self] photo in
             
             DispatchQueue.main.async {
-                self?.imgView.image = photo
-                self?.applyFilterBtn.isHidden = false
+                self?.updateUI(with: photo)
             }
 
         }).disposed(by: disposeBag)
 
     }
+    
+    private func updateUI(with image: UIImage) {
+        self.imgView.image = image
+        self.applyFilterBtn.isHidden = false
+    }
 
 
     @IBAction func applyFilterPressed(_ sender: UIButton) {
+        
+        guard let sourceImage = self.imgView.image else { return }
+        
+        FiltersService().applyFilter(to: sourceImage) { filteredImage in
+            
+            DispatchQueue.main.async {
+                self.imgView.image = filteredImage
+            }
+            
+        }
+        
     }
 
 }
