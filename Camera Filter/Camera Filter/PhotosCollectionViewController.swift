@@ -9,7 +9,7 @@ import UIKit
 import Photos
 
 class PhotosCollectionViewController: UICollectionViewController {
-    
+
     private var images = [PHAsset]()
 
     override func viewDidLoad() {
@@ -20,22 +20,55 @@ class PhotosCollectionViewController: UICollectionViewController {
 
     private func populatePhotos() {
         PHPhotoLibrary.requestAuthorization { [weak self] status in
-            
+
             if status == .authorized {
-                
+
                 // Access the photos from photo library
                 let assets = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
-                
+
                 assets.enumerateObjects { (object, count, stop) in
                     self?.images.append(object)
                 }
-                
+
                 self?.images.reverse()
-                self?.collectionView.reloadData()
                 
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
+
+            }
+
+        }
+    }
+
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.images.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? PhotoCollectionViewCell else { fatalError("Collection View Cell not Found") }
+
+        let asset = self.images[indexPath.row]
+        let manager = PHImageManager.default()
+
+        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: nil) { image, _ in
+            
+            DispatchQueue.main.async {
+                cell.imgView.image = image
             }
             
         }
+
+        return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

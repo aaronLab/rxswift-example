@@ -70,19 +70,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="L8u-r8-bT3">
-                            <size key="itemSize" width="128" height="128"/>
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="101"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cr5-7Y-rlR">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="cr5-7Y-rlR" customClass="PhotoCollectionViewCell" customModule="Camera_Filter" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OWw-bM-xbF">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VDX-uh-KBL">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="VDX-uh-KBL" secondAttribute="trailing" id="ClH-5G-ECx"/>
+                                        <constraint firstItem="VDX-uh-KBL" firstAttribute="leading" secondItem="OWw-bM-xbF" secondAttribute="leading" id="QFP-8Q-F8D"/>
+                                        <constraint firstItem="VDX-uh-KBL" firstAttribute="top" secondItem="OWw-bM-xbF" secondAttribute="top" id="QrH-NN-fkd"/>
+                                        <constraint firstAttribute="bottom" secondItem="VDX-uh-KBL" secondAttribute="bottom" id="m7q-mS-77Z"/>
+                                        <constraint firstItem="VDX-uh-KBL" firstAttribute="height" secondItem="OWw-bM-xbF" secondAttribute="height" id="wq7-Fu-yTs"/>
+                                        <constraint firstItem="VDX-uh-KBL" firstAttribute="width" secondItem="OWw-bM-xbF" secondAttribute="width" id="zK1-V7-Tc4"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
+                                <connections>
+                                    <outlet property="imgView" destination="VDX-uh-KBL" id="uaR-tq-g9q"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -94,7 +110,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Uy-dx-OSt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2242" y="125"/>
+            <point key="canvasLocation" x="2239.130434782609" y="124.55357142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9qI-xR-90B">
