@@ -1,6 +1,10 @@
 import UIKit
 import RxSwift
 
+let disposeBag = DisposeBag()
+
+// MARK: - Observable
+
 //let observable = Observable.just(1)  // <Int>
 //
 //let observable2 = Observable.of(1, 2, 3)  // <Int>
@@ -37,8 +41,7 @@ import RxSwift
 //
 //subscription4.dispose()
 
-//let disposeBag = DisposeBag()
-//
+
 //Observable.of("A", "B", "C")
 //    .subscribe {
 //        print($0)
@@ -59,8 +62,8 @@ import RxSwift
 //    print("Disposed")
 //}.disposed(by: disposeBag)
 
-//let disposebag = DisposeBag()
-//
+// MARK: - PublishSubject
+
 //let subject = PublishSubject<String>()
 //
 //subject.onNext("First")  // Not Work
@@ -78,14 +81,35 @@ import RxSwift
 //
 //subject.onNext("Fourth")
 
-let disposeBag = DisposeBag()
+// MARK: - BehaviorSubject
 
-let subject = BehaviorSubject(value: "Initial Value")
+//let subject = BehaviorSubject(value: "Initial Value")
+//
+//subject.onNext("Last Issue")
+//
+//subject.subscribe { event in
+//    print(event)
+//}
+//
+//subject.onNext("Second Value")
 
-subject.onNext("Last Issue")
+// MARK: - ReplaySubject
 
-subject.subscribe { event in
-    print(event)
+let subject = ReplaySubject<String>.create(bufferSize: 2)
+
+subject.onNext("1")
+subject.onNext("2")
+subject.onNext("3")
+
+subject.subscribe {
+    print($0)
 }
 
-subject.onNext("Second Value")
+subject.onNext("4")
+subject.onNext("5")
+subject.onNext("6")
+
+print("Subscription 2")
+subject.subscribe {
+    print($0)
+}
