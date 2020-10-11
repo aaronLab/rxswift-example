@@ -37,25 +37,43 @@ import RxSwift
 //
 //subscription4.dispose()
 
-let disposeBag = DisposeBag()
+//let disposeBag = DisposeBag()
+//
+//Observable.of("A", "B", "C")
+//    .subscribe {
+//        print($0)
+//    }.disposed(by: disposeBag)
+//
+//Observable<String>.create { observer in
+//    observer.onNext("A")
+//    observer.onCompleted()
+//    observer.onNext("?")
+//    return Disposables.create()
+//}.subscribe {
+//    print($0)
+//} onError: {
+//    print($0)
+//} onCompleted: {
+//    print("Completed")
+//} onDisposed: {
+//    print("Disposed")
+//}.disposed(by: disposeBag)
 
-Observable.of("A", "B", "C")
-    .subscribe {
-        print($0)
-    }.disposed(by: disposeBag)
+let disposebag = DisposeBag()
 
-Observable<String>.create { observer in
-    observer.onNext("A")
-    observer.onCompleted()
-    observer.onNext("?")
-    return Disposables.create()
-}.subscribe {
-    print($0)
-} onError: {
-    print($0)
-} onCompleted: {
-    print("Completed")
-} onDisposed: {
-    print("Disposed")
-}.disposed(by: disposeBag)
+let subject = PublishSubject<String>()
 
+subject.onNext("First")  // Not Work
+
+subject.subscribe { event in
+    print(event)
+}
+
+subject.onNext("Second")
+subject.onNext("Third")
+
+subject.dispose()  // Will be ignored after this
+
+subject.onCompleted()
+
+subject.onNext("Fourth")
