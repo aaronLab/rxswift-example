@@ -87,11 +87,11 @@
 			isa = PBXGroup;
 			children = (
 				A40F025F2607824A0023619D /* Application */,
-				A40F0263260782750023619D /* ViewModel */,
-				A40F02622607826C0023619D /* View */,
-				A40F0261260782670023619D /* Controller */,
-				A40F02602607825F0023619D /* Model */,
-				A40F0267260785C90023619D /* Extensions */,
+				A40F028426078F330023619D /* ViewModel */,
+				A40F028526078F390023619D /* View */,
+				A40F028326078F2E0023619D /* Controller */,
+				A40F028226078F1C0023619D /* Model */,
+				A40F028626078F570023619D /* Extensions */,
 			);
 			path = NewsApi;
 			sourceTree = "<group>";
@@ -109,43 +109,43 @@
 			name = Application;
 			sourceTree = "<group>";
 		};
-		A40F02602607825F0023619D /* Model */ = {
+		A40F028226078F1C0023619D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A40F027B26078BE70023619D /* Article.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		A40F0261260782670023619D /* Controller */ = {
+		A40F028326078F2E0023619D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				A40F02452607805F0023619D /* NewsTableViewController.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		A40F02622607826C0023619D /* View */ = {
+		A40F028426078F330023619D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = View;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		A40F0263260782750023619D /* ViewModel */ = {
+		A40F028526078F390023619D /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = ViewModel;
+			path = View;
 			sourceTree = "<group>";
 		};
-		A40F0267260785C90023619D /* Extensions */ = {
+		A40F028626078F570023619D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				A40F0268260785D10023619D /* UIView+Extensions.swift */,
 				A40F027F26078CB20023619D /* URLRequest+Extensions.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
