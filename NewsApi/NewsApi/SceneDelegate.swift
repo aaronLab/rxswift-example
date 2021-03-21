@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         
-        let vc = MainViewController()
+        let vc = NewsTableViewController()
         let nc = UINavigationController(rootViewController: vc)
         
         window = UIWindow(windowScene: scene)

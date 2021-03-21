@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .foregroundColor: UIColor.white
         ]
         
-        let vc = MainViewController()
+        let vc = NewsTableViewController()
         let nc = UINavigationController(rootViewController: vc)
         
         window = UIWindow()

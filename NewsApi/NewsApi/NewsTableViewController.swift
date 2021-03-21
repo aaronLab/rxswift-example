@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UITableViewController {
+class NewsTableViewController: UITableViewController {
     
     // MARK: - Properties
     
