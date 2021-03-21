@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		A40F02422607805F0023619D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F02412607805F0023619D /* AppDelegate.swift */; };
 		A40F02442607805F0023619D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F02432607805F0023619D /* SceneDelegate.swift */; };
-		A40F02462607805F0023619D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F02452607805F0023619D /* ViewController.swift */; };
-		A40F02492607805F0023619D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40F02472607805F0023619D /* Main.storyboard */; };
+		A40F02462607805F0023619D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F02452607805F0023619D /* MainViewController.swift */; };
 		A40F024B260780630023619D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40F024A260780630023619D /* Assets.xcassets */; };
 		A40F024E260780630023619D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40F024C260780630023619D /* LaunchScreen.storyboard */; };
 		A40F025D260780E40023619D /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F025C260780E40023619D /* APIKey.swift */; };
+		A40F0269260785D10023619D /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F0268260785D10023619D /* UIView+Extensions.swift */; };
 		CDD9686C6AF7E438BDC7DF03 /* Pods_NewsApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4C61B8E6C40AB9A5F1E833 /* Pods_NewsApi.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,12 +22,12 @@
 		A40F023E2607805F0023619D /* NewsApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40F02412607805F0023619D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A40F02432607805F0023619D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A40F02452607805F0023619D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A40F02482607805F0023619D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A40F02452607805F0023619D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A40F024A260780630023619D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A40F024D260780630023619D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A40F024F260780630023619D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A40F025C260780E40023619D /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		A40F0268260785D10023619D /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		CB4C61B8E6C40AB9A5F1E833 /* Pods_NewsApi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFE0C9531B19426008F5BD10 /* Pods-NewsApi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApi.debug.xcconfig"; path = "Target Support Files/Pods-NewsApi/Pods-NewsApi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,16 +82,64 @@
 		A40F02402607805F0023619D /* NewsApi */ = {
 			isa = PBXGroup;
 			children = (
+				A40F0267260785C90023619D /* Extensions */,
+				A40F025F2607824A0023619D /* Application */,
+				A40F0263260782750023619D /* ViewModel */,
+				A40F02622607826C0023619D /* View */,
+				A40F0261260782670023619D /* Controller */,
+				A40F02602607825F0023619D /* Model */,
+			);
+			path = NewsApi;
+			sourceTree = "<group>";
+		};
+		A40F025F2607824A0023619D /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				A40F02412607805F0023619D /* AppDelegate.swift */,
 				A40F02432607805F0023619D /* SceneDelegate.swift */,
-				A40F02452607805F0023619D /* ViewController.swift */,
-				A40F02472607805F0023619D /* Main.storyboard */,
 				A40F024A260780630023619D /* Assets.xcassets */,
 				A40F024C260780630023619D /* LaunchScreen.storyboard */,
 				A40F024F260780630023619D /* Info.plist */,
 				A40F025C260780E40023619D /* APIKey.swift */,
 			);
-			path = NewsApi;
+			name = Application;
+			sourceTree = "<group>";
+		};
+		A40F02602607825F0023619D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A40F0261260782670023619D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A40F02452607805F0023619D /* MainViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A40F02622607826C0023619D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A40F0263260782750023619D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		A40F0267260785C90023619D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A40F0268260785D10023619D /* UIView+Extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +203,6 @@
 			files = (
 				A40F024E260780630023619D /* LaunchScreen.storyboard in Resources */,
 				A40F024B260780630023619D /* Assets.xcassets in Resources */,
-				A40F02492607805F0023619D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A40F02462607805F0023619D /* ViewController.swift in Sources */,
+				A40F02462607805F0023619D /* MainViewController.swift in Sources */,
 				A40F02422607805F0023619D /* AppDelegate.swift in Sources */,
+				A40F0269260785D10023619D /* UIView+Extensions.swift in Sources */,
 				A40F025D260780E40023619D /* APIKey.swift in Sources */,
 				A40F02442607805F0023619D /* SceneDelegate.swift in Sources */,
 			);
@@ -218,14 +266,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A40F02472607805F0023619D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A40F02482607805F0023619D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A40F024C260780630023619D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -288,7 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -343,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -362,7 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6U769Q36UT;
 				INFOPLIST_FILE = NewsApi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -383,7 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6U769Q36UT;
 				INFOPLIST_FILE = NewsApi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
