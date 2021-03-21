@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		A40F021E260773310023619D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40F021D260773310023619D /* Assets.xcassets */; };
 		A40F0221260773310023619D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40F021F260773310023619D /* LaunchScreen.storyboard */; };
 		A40F022B260774300023619D /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F022A260774300023619D /* PhotoCollectionViewController.swift */; };
+		A40F023326077C990023619D /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F023226077C990023619D /* PhotoCollectionViewCell.swift */; };
 		C49AE877E59F96D17FA3E8B5 /* Pods_CameraFilter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83598B6908E28D1B76A03D7 /* Pods_CameraFilter.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		A40F0220260773310023619D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A40F0222260773310023619D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A40F022A260774300023619D /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		A40F023226077C990023619D /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B83598B6908E28D1B76A03D7 /* Pods_CameraFilter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CameraFilter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -50,7 +52,6 @@
 				9B18208ACC81B87DFC113E1C /* Pods-CameraFilter.debug.xcconfig */,
 				5C0E4C438BE927F8CD2B4353 /* Pods-CameraFilter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,6 +84,7 @@
 				A40F021F260773310023619D /* LaunchScreen.storyboard */,
 				A40F0222260773310023619D /* Info.plist */,
 				A40F022A260774300023619D /* PhotoCollectionViewController.swift */,
+				A40F023226077C990023619D /* PhotoCollectionViewCell.swift */,
 			);
 			path = CameraFilter;
 			sourceTree = "<group>";
@@ -210,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A40F0219260773300023619D /* ViewController.swift in Sources */,
+				A40F023326077C990023619D /* PhotoCollectionViewCell.swift in Sources */,
 				A40F0215260773300023619D /* AppDelegate.swift in Sources */,
 				A40F0217260773300023619D /* SceneDelegate.swift in Sources */,
 				A40F022B260774300023619D /* PhotoCollectionViewController.swift in Sources */,
