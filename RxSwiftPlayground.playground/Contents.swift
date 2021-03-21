@@ -1,24 +1,24 @@
 import UIKit
 import RxSwift
 
-let observable = Observable.just(1)
+let disposeBag = DisposeBag()
 
-let observable2 = Observable.of(1, 2, 3)
+Observable.of("A", "B", "C")
+    .subscribe {
+        print($0)
+    }.disposed(by: disposeBag)
 
-let observable3 = Observable.of([1, 2, 3])
-
-let observable4 = Observable.from([1, 2, 3, 4, 5])
-
-observable4.subscribe { event in
-    guard let element = event.element else { return }
-    print(element)
-}
-
-observable3.subscribe { event in
-    guard let element = event.element else { return }
-    print(element)
-}
-
-observable4.subscribe(onNext: { element in
-    print(element)
-})
+Observable<String>.create { observer in
+    observer.onNext("A")
+    observer.onCompleted()
+    observer.onNext("?")
+    return Disposables.create()
+}.subscribe(onNext: {
+    print($0)
+}, onError: {
+    print($0)
+}, onCompleted: {
+    print("Completed")
+}) {
+    print("Disposed")
+}.disposed(by: disposeBag)
