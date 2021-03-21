@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UITableViewController {
     
     // MARK: - Properties
     
@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupViews()
     }
     
     // MARK: - Actions
@@ -23,7 +23,9 @@ class MainViewController: UIViewController {
     // MARK: - Helpers
     
     func setupViews() {
-        
+        view.backgroundColor = .white
+        title = "News App"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
 }

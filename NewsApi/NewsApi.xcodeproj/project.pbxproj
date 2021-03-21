@@ -82,12 +82,12 @@
 		A40F02402607805F0023619D /* NewsApi */ = {
 			isa = PBXGroup;
 			children = (
-				A40F0267260785C90023619D /* Extensions */,
 				A40F025F2607824A0023619D /* Application */,
 				A40F0263260782750023619D /* ViewModel */,
 				A40F02622607826C0023619D /* View */,
 				A40F0261260782670023619D /* Controller */,
 				A40F02602607825F0023619D /* Model */,
+				A40F0267260785C90023619D /* Extensions */,
 			);
 			path = NewsApi;
 			sourceTree = "<group>";

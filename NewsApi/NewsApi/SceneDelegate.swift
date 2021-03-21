@@ -15,8 +15,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
+        
+        let barColor = UIColor(displayP3Red: 142/255,
+                               green: 68/255,
+                               blue: 173/255,
+                               alpha: 1.0)
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = barColor
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        UINavigationBar.appearance().tintColor = barColor
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
+        let vc = MainViewController()
+        let nc = UINavigationController(rootViewController: vc)
+        
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = MainViewController()
+        window?.rootViewController = nc
         window?.makeKeyAndVisible()
     }
 
