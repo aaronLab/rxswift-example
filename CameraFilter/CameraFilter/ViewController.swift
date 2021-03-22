@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         button.setTitle("Apply Filter", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .systemBlue
+        button.addTarget(self, action: #selector(filterButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -54,11 +55,26 @@ class ViewController: UIViewController {
             
             guard let `self` = self else { return }
             
-            self.imageView.image = image
+            DispatchQueue.main.async {
+                self.updateUI(with: image)
+            }
             
         }).disposed(by: disposeBag)
         
         present(nvc, animated: true)
+    }
+    
+    /// Filter Process
+    @objc private func filterButtonPressed() {
+        guard let sourceImage = self.imageView.image else { return }
+        
+        FilterService().applyFilter(to: sourceImage) { [weak self] filteredImage in
+            guard let `self` = self else { return }
+            
+            DispatchQueue.main.async {
+                self.imageView.image = filteredImage
+            }
+        }
     }
     
     // MARK: - Helpers
@@ -87,6 +103,11 @@ class ViewController: UIViewController {
         filterButton.centerX(inView: view)
         filterButton.setWidth(120)
         filterButton.isHidden = true
+    }
+    
+    private func updateUI(with image: UIImage) {
+        imageView.image = image
+        filterButton.isHidden = false
     }
 
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		A450A6F92608D4B300BE8BFE /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A6F82608D4B300BE8BFE /* UIView+Extensions.swift */; };
 		A450A6FC2608D69D00BE8BFE /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A6FB2608D69D00BE8BFE /* CollectionViewController.swift */; };
 		A450A6FF2608D77700BE8BFE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A450A6FE2608D77700BE8BFE /* CollectionViewCell.swift */; };
+		A4B2DA112608EC700059043F /* FilterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B2DA102608EC700059043F /* FilterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A450A6F82608D4B300BE8BFE /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A450A6FB2608D69D00BE8BFE /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		A450A6FE2608D77700BE8BFE /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		A4B2DA102608EC700059043F /* FilterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterService.swift; sourceTree = "<group>"; };
 		BCA9C4B45144BD8EAE834756 /* Pods-CameraFilter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CameraFilter.release.xcconfig"; path = "Target Support Files/Pods-CameraFilter/Pods-CameraFilter.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,7 +54,6 @@
 				010C957BB7D786305CDF9B4C /* Pods-CameraFilter.debug.xcconfig */,
 				BCA9C4B45144BD8EAE834756 /* Pods-CameraFilter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -80,6 +81,7 @@
 				A450A6E22608D42D00BE8BFE /* AppDelegate.swift */,
 				A450A6E42608D42D00BE8BFE /* SceneDelegate.swift */,
 				A450A6E62608D42D00BE8BFE /* ViewController.swift */,
+				A4B2DA102608EC700059043F /* FilterService.swift */,
 				A450A6FB2608D69D00BE8BFE /* CollectionViewController.swift */,
 				A450A6FE2608D77700BE8BFE /* CollectionViewCell.swift */,
 				A450A6EB2608D43000BE8BFE /* Assets.xcassets */,
@@ -214,6 +216,7 @@
 				A450A6E72608D42D00BE8BFE /* ViewController.swift in Sources */,
 				A450A6E32608D42D00BE8BFE /* AppDelegate.swift in Sources */,
 				A450A6FF2608D77700BE8BFE /* CollectionViewCell.swift in Sources */,
+				A4B2DA112608EC700059043F /* FilterService.swift in Sources */,
 				A450A6F92608D4B300BE8BFE /* UIView+Extensions.swift in Sources */,
 				A450A6E52608D42D00BE8BFE /* SceneDelegate.swift in Sources */,
 				A450A6FC2608D69D00BE8BFE /* CollectionViewController.swift in Sources */,
