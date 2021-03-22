@@ -14,6 +14,8 @@ class CollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
     
+    private var images = [PHAsset]()
+    
     lazy var closeBarButton: UIBarButtonItem = {
         let barButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.close,
                                         target: self,
@@ -59,9 +61,25 @@ class CollectionViewController: UICollectionViewController {
      Setup Photos
      */
     private func populatePhotos() {
-        PHPhotoLibrary.requestAuthorization { status in
+        PHPhotoLibrary.requestAuthorization { [weak self] status in
+            
+            guard let `self` = self else { return }
             
             if status == .authorized {
+                
+                let assets = PHAsset.fetchAssets(with: .image, options: nil)
+                
+                assets.enumerateObjects { object, count, stop in
+                    
+                    self.images.append(object)
+                    
+                }
+                
+                self.images.reverse()
+                
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
 
             }
 
