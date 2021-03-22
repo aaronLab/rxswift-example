@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 private let cellIdentifier = "CellIdentifier"
 
@@ -33,6 +34,7 @@ class CollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        populatePhotos()
     }
     
     // MARK: - Actions
@@ -43,11 +45,27 @@ class CollectionViewController: UICollectionViewController {
     
     // MARK: - Helpers
     
+    /**
+     Setup Views
+     */
     private func configureViews() {
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.backgroundColor = .white
         
         navigationItem.rightBarButtonItem = closeBarButton
+    }
+    
+    /**
+     Setup Photos
+     */
+    private func populatePhotos() {
+        PHPhotoLibrary.requestAuthorization { status in
+            
+            if status == .authorized {
+
+            }
+
+        }
     }
     
 }
