@@ -68,13 +68,19 @@ class ViewController: UIViewController {
     @objc private func filterButtonPressed() {
         guard let sourceImage = self.imageView.image else { return }
         
-        FilterService().applyFilter(to: sourceImage) { [weak self] filteredImage in
-            guard let `self` = self else { return }
-            
-            DispatchQueue.main.async {
-                self.imageView.image = filteredImage
-            }
-        }
+        FilterService().applyFilter(to: sourceImage)
+            .subscribe(onNext: { [weak self] filteredImage in
+                
+                guard let `self` = self else { return }
+                
+                DispatchQueue.main.async {
+                    
+                    self.imageView.image = filteredImage
+                    
+                }
+                
+            })
+            .disposed(by: disposeBag)
     }
     
     // MARK: - Helpers
