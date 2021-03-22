@@ -7,12 +7,18 @@
 
 import UIKit
 import Photos
+import RxSwift
 
 private let cellIdentifier = "CellIdentifier"
 
 class CollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
+    
+    private let selectedPhotoSubject = PublishSubject<UIImage>()
+    var selectedPhoto: Observable<UIImage> {
+        return selectedPhotoSubject.asObservable()
+    }
     
     private var images = [PHAsset]()
     
@@ -104,7 +110,7 @@ extension CollectionViewController {
         }
         
         let numInRow: CGFloat = 3
-        let margins: CGFloat = 8 * (numInRow - 1)
+        let margins: CGFloat = 2 * (numInRow - 1)
         let width: CGFloat = (view.frame.width / numInRow) - margins
         
         let asset = self.images[indexPath.row]
@@ -120,6 +126,31 @@ extension CollectionViewController {
             
         }
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let selectedAsset = images[indexPath.row]
+        PHImageManager.default().requestImage(for: selectedAsset,
+                                              targetSize: CGSize(width: 300, height: 300),
+                                              contentMode: .aspectFit,
+                                              options: nil) { [weak self] image, info in
+            guard let `self` = self else { return }
+            guard let info = info else { return }
+            
+            let isDegradedKey = (info["PHImageResultIsDegradedKey"] as? Bool) ?? false
+            
+            if !isDegradedKey {
+                
+                if let image = image {
+                    self.selectedPhotoSubject.onNext(image)
+                    self.dismiss(animated: true, completion: nil)
+                }
+                
+            }
+            
+        }
+        
     }
     
 }
