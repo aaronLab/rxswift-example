@@ -27,6 +27,7 @@
 		A450A6952608CAEF00BE8BFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A450A69D2608CAFE00BE8BFE /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxSwift; path = ../RxSwift; sourceTree = "<group>"; };
 		A450A6AE2608CBEA00BE8BFE /* PublishSubjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PublishSubjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A450A6B12608CE1600BE8BFE /* BehaviorSubjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BehaviorSubjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +70,7 @@
 				A450A6922608CAEF00BE8BFE /* LaunchScreen.storyboard */,
 				A450A6952608CAEF00BE8BFE /* Info.plist */,
 				A450A6AE2608CBEA00BE8BFE /* PublishSubjects.playground */,
+				A450A6B12608CE1600BE8BFE /* BehaviorSubjects.playground */,
 			);
 			path = Subjects;
 			sourceTree = "<group>";
