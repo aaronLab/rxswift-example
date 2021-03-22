@@ -13,7 +13,7 @@
 		A450A68F2608CAED00BE8BFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A450A68D2608CAED00BE8BFE /* Main.storyboard */; };
 		A450A6912608CAEF00BE8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A450A6902608CAEF00BE8BFE /* Assets.xcassets */; };
 		A450A6942608CAEF00BE8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A450A6922608CAEF00BE8BFE /* LaunchScreen.storyboard */; };
-		A450A6AA2608CBA200BE8BFE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A450A6A92608CBA200BE8BFE /* RxSwift */; };
+		A450A6D42608D2BF00BE8BFE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A450A6D32608D2BF00BE8BFE /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,10 +25,10 @@
 		A450A6902608CAEF00BE8BFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A450A6932608CAEF00BE8BFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A450A6952608CAEF00BE8BFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A450A69D2608CAFE00BE8BFE /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxSwift; path = ../RxSwift; sourceTree = "<group>"; };
 		A450A6AE2608CBEA00BE8BFE /* PublishSubjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PublishSubjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A450A6B12608CE1600BE8BFE /* BehaviorSubjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BehaviorSubjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A450A6B32608CFD000BE8BFE /* ReplaySubject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ReplaySubject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A450A6D12608D2BA00BE8BFE /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxSwift; path = ../RxSwift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A450A6AA2608CBA200BE8BFE /* RxSwift in Frameworks */,
+				A450A6D42608D2BF00BE8BFE /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +80,7 @@
 		A450A69C2608CAFE00BE8BFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A450A69D2608CAFE00BE8BFE /* RxSwift */,
+				A450A6D12608D2BA00BE8BFE /* RxSwift */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,7 +102,7 @@
 			);
 			name = Subjects;
 			packageProductDependencies = (
-				A450A6A92608CBA200BE8BFE /* RxSwift */,
+				A450A6D32608D2BF00BE8BFE /* RxSwift */,
 			);
 			productName = Subjects;
 			productReference = A450A6842608CAED00BE8BFE /* Subjects.app */;
@@ -131,6 +131,8 @@
 				Base,
 			);
 			mainGroup = A450A67B2608CAED00BE8BFE;
+			packageReferences = (
+			);
 			productRefGroup = A450A6852608CAED00BE8BFE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -364,7 +366,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A450A6A92608CBA200BE8BFE /* RxSwift */ = {
+		A450A6D32608D2BF00BE8BFE /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RxSwift;
 		};
