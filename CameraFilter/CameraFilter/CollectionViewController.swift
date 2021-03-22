@@ -25,14 +25,6 @@ class CollectionViewController: UICollectionViewController {
     
     // MARK: - Lifecycle
     
-    init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -53,6 +45,12 @@ class CollectionViewController: UICollectionViewController {
     private func configureViews() {
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.backgroundColor = .white
+        
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            let horizontalSpacing = flowLayout.scrollDirection == .vertical ? flowLayout.minimumInteritemSpacing : flowLayout.minimumLineSpacing
+            let cellWidth = (collectionView.frame.width - max(0, 3 - 1)*horizontalSpacing)/3
+            flowLayout.itemSize = CGSize(width: cellWidth, height: cellWidth)
+        }
         
         navigationItem.rightBarButtonItem = closeBarButton
     }
@@ -80,10 +78,48 @@ class CollectionViewController: UICollectionViewController {
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
-
+                
             }
-
+            
         }
+    }
+    
+}
+
+// MARK: - DataSource
+
+extension CollectionViewController {
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? CollectionViewCell else {
+            fatalError("CollectionViewCell is not found")
+        }
+        
+        let numInRow: CGFloat = 3
+        let margins: CGFloat = 8 * (numInRow - 1)
+        let width: CGFloat = (view.frame.width / numInRow) - margins
+        
+        let asset = self.images[indexPath.row]
+        let manager = PHImageManager.default()
+        manager.requestImage(for: asset,
+                             targetSize: CGSize(width: width, height: width),
+                             contentMode: .aspectFit,
+                             options: nil) { image, _ in
+            
+            DispatchQueue.main.async {
+                cell.imageView.image = image
+            }
+            
+        }
+        return cell
     }
     
 }

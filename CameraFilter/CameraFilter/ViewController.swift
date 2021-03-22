@@ -42,7 +42,8 @@ class ViewController: UIViewController {
     
     /// Show photo collection view
     @objc private func addBarButtonPressed() {
-        let vc = CollectionViewController()
+        let layout = UICollectionViewFlowLayout()
+        let vc = CollectionViewController(collectionViewLayout: layout)
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .fullScreen
         present(nvc, animated: true)

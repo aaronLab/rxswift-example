@@ -13,6 +13,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        configureViews()
     }
     
     required init?(coder: NSCoder) {
@@ -20,5 +21,14 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Helpers
+    private func configureViews() {
+        contentView.addSubview(imageView)
+        imageView.anchor(
+            top: topAnchor,
+            left: leftAnchor,
+            bottom: bottomAnchor,
+            right: rightAnchor
+        )
+    }
     
 }
