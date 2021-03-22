@@ -28,6 +28,7 @@
 		A450A69D2608CAFE00BE8BFE /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxSwift; path = ../RxSwift; sourceTree = "<group>"; };
 		A450A6AE2608CBEA00BE8BFE /* PublishSubjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = PublishSubjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A450A6B12608CE1600BE8BFE /* BehaviorSubjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BehaviorSubjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A450A6B32608CFD000BE8BFE /* ReplaySubject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ReplaySubject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 				A450A6952608CAEF00BE8BFE /* Info.plist */,
 				A450A6AE2608CBEA00BE8BFE /* PublishSubjects.playground */,
 				A450A6B12608CE1600BE8BFE /* BehaviorSubjects.playground */,
+				A450A6B32608CFD000BE8BFE /* ReplaySubject.playground */,
 			);
 			path = Subjects;
 			sourceTree = "<group>";
