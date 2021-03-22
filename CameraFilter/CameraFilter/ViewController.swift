@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class ViewController: UIViewController {
     
     // MARK: - Properties
+    
+    private let disposeBag = DisposeBag()
     
     lazy var addBarButton: UIBarButtonItem = {
         let barButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add,
@@ -46,6 +49,15 @@ class ViewController: UIViewController {
         let vc = CollectionViewController(collectionViewLayout: layout)
         let nvc = UINavigationController(rootViewController: vc)
         nvc.modalPresentationStyle = .fullScreen
+        
+        vc.selectedPhoto.subscribe(onNext: { [weak self] image in
+            
+            guard let `self` = self else { return }
+            
+            self.imageView.image = image
+            
+        }).disposed(by: disposeBag)
+        
         present(nvc, animated: true)
     }
     
@@ -64,7 +76,7 @@ class ViewController: UIViewController {
             left: view.leftAnchor,
             right: view.rightAnchor
         )
-        imageView.setHeight(view.frame.size.height * 0.75)
+        imageView.setHeight(view.frame.size.height * 0.7)
         
         // Filter Button
         view.addSubview(filterButton)
