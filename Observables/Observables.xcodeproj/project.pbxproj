@@ -13,8 +13,8 @@
 		A450A6472608C3D800BE8BFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A450A6452608C3D800BE8BFE /* Main.storyboard */; };
 		A450A6492608C3D900BE8BFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A450A6482608C3D900BE8BFE /* Assets.xcassets */; };
 		A450A64C2608C3D900BE8BFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A450A64A2608C3D900BE8BFE /* LaunchScreen.storyboard */; };
-		A450A6592608C42200BE8BFE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A450A6582608C42200BE8BFE /* RxCocoa */; };
-		A450A65B2608C42200BE8BFE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A450A65A2608C42200BE8BFE /* RxSwift */; };
+		A450A6752608C76800BE8BFE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A450A6742608C76800BE8BFE /* RxCocoa */; };
+		A450A6772608C76800BE8BFE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A450A6762608C76800BE8BFE /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +26,8 @@
 		A450A6482608C3D900BE8BFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A450A64B2608C3D900BE8BFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A450A64D2608C3D900BE8BFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A450A6662608C56600BE8BFE /* Observables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observables.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A450A6732608C75D00BE8BFE /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxSwift; path = ../RxSwift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,8 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A450A65B2608C42200BE8BFE /* RxSwift in Frameworks */,
-				A450A6592608C42200BE8BFE /* RxCocoa in Frameworks */,
+				A450A6772608C76800BE8BFE /* RxSwift in Frameworks */,
+				A450A6752608C76800BE8BFE /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +70,7 @@
 				A450A6482608C3D900BE8BFE /* Assets.xcassets */,
 				A450A64A2608C3D900BE8BFE /* LaunchScreen.storyboard */,
 				A450A64D2608C3D900BE8BFE /* Info.plist */,
+				A450A6662608C56600BE8BFE /* Observables.playground */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -75,6 +78,7 @@
 		A450A6572608C42200BE8BFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A450A6732608C75D00BE8BFE /* RxSwift */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -96,8 +100,8 @@
 			);
 			name = Observables;
 			packageProductDependencies = (
-				A450A6582608C42200BE8BFE /* RxCocoa */,
-				A450A65A2608C42200BE8BFE /* RxSwift */,
+				A450A6742608C76800BE8BFE /* RxCocoa */,
+				A450A6762608C76800BE8BFE /* RxSwift */,
 			);
 			productName = Observables;
 			productReference = A450A63C2608C3D800BE8BFE /* Observables.app */;
@@ -126,6 +130,8 @@
 				Base,
 			);
 			mainGroup = A450A6332608C3D800BE8BFE;
+			packageReferences = (
+			);
 			productRefGroup = A450A63D2608C3D800BE8BFE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -232,7 +238,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -287,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -359,11 +365,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A450A6582608C42200BE8BFE /* RxCocoa */ = {
+		A450A6742608C76800BE8BFE /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RxCocoa;
 		};
-		A450A65A2608C42200BE8BFE /* RxSwift */ = {
+		A450A6762608C76800BE8BFE /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RxSwift;
 		};
