@@ -1,4 +1,3 @@
-import UIKit
 import RxSwift
 
 let observable1 = Observable.just(1)
@@ -29,8 +28,9 @@ observable3.subscribe { event in
 print("==============================")
 
 print("onNext...")
-observable4.subscribe(onNext: { element in
+let subscription4 = observable4.subscribe(onNext: { element in
     // without unwrapping
     print(element)
 })
+subscription4.dispose()
 print("==============================")
