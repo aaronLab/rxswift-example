@@ -42,8 +42,14 @@ class AddTaskViewController: UIViewController {
     // MARK: - Actions
     
     @objc private func saveBarButtonPressed() {
-        // TODO: Svae + Close view
-        dismiss(animated: true, completion: nil)
+        guard let priority = Priority(rawValue: segmentedControl.selectedSegmentIndex),
+              let title = textField.text else {
+            return
+        }
+        
+        let task = Task(title: title, priority: priority)
+        
+        print(task)
     }
     
     // MARK: - Helpers
