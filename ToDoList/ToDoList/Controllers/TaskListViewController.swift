@@ -18,11 +18,13 @@ class TaskListViewController: UIViewController, UITableViewDelegate {
     private let disposeBag = DisposeBag()
     
     private var tasks = BehaviorRelay<[Task]>(value: [])
+    private var filteredTasks = [Task]()
     
-    private let segmentedControl: UISegmentedControl = {
+    private lazy var segmentedControl: UISegmentedControl = {
         let items = ["All", "High", "Medium", "Low"]
         let sc = UISegmentedControl(items: items)
         sc.selectedSegmentIndex = 0
+        sc.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
         return sc
     }()
     
@@ -50,12 +52,18 @@ class TaskListViewController: UIViewController, UITableViewDelegate {
     @objc private func addBarButtonPressed() {
         let vc = AddTaskViewController()
         vc.taskSubjectObservable
-            .subscribe(onNext: { task in
+            .subscribe(onNext: { [weak self] task in
+                
+                guard let `self` = self else { return }
+                
+                let priority = Priority(rawValue: self.segmentedControl.selectedSegmentIndex - 1)
                 
                 var existingTasks = self.tasks.value
                 existingTasks.append(task)
                 
                 self.tasks.accept(existingTasks)
+                
+                self.filterTasks(by: priority)
             })
             .disposed(by: disposeBag)
         
@@ -63,6 +71,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate {
         navC.modalPresentationStyle = .fullScreen
         
         present(navC, animated: true, completion: nil)
+    }
+    
+    @objc private func segmentAction(_ sender: UISegmentedControl) {
+        let priority = Priority(rawValue: sender.selectedSegmentIndex - 1)
+        filterTasks(by: priority)
     }
     
     // MARK: - Helpers
@@ -90,6 +103,28 @@ class TaskListViewController: UIViewController, UITableViewDelegate {
                          paddingTop: 8)
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    private func filterTasks(by priority: Priority?) {
+        
+        if priority == nil {
+            filteredTasks = tasks.value
+            print(filteredTasks)
+        } else {
+            
+            tasks.map { tasks in
+                
+                return tasks.filter { $0.priority == priority! }
+            }.subscribe(onNext: { [weak self] tasks in
+                guard let `self` = self else { return }
+                
+                self.filteredTasks = tasks
+                print(tasks)
+                
+            }).disposed(by: disposeBag)
+            
+        }
+        
     }
 
 }
