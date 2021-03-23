@@ -25,6 +25,13 @@ class TaskListViewController: UIViewController, UITableViewDelegate {
         return tv
     }()
     
+    private lazy var addBarButton: UIBarButtonItem = {
+        let btn = UIBarButtonItem(barButtonSystemItem: .add,
+                                  target: self,
+                                  action: #selector(addBarButtonPressed))
+        return btn
+    }()
+    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -34,20 +41,29 @@ class TaskListViewController: UIViewController, UITableViewDelegate {
     
     // MARK: - Actions
     
+    @objc private func addBarButtonPressed() {
+        let vc = AddTaskViewController()
+        let navC = UINavigationController(rootViewController: vc)
+        navC.modalPresentationStyle = .fullScreen
+        present(navC, animated: true, completion: nil)
+    }
+    
     // MARK: - Helpers
     
     private func configureViews() {
+        // default view
         view.backgroundColor = .white
-        
         title = "ToDo List"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = addBarButton
         
+        // segmentedControl
         view.addSubview(segmentedControl)
-        segmentedControl.anchor(
-            top: view.safeAreaLayoutGuide.topAnchor,
-            paddingTop: 8
-        )
+        segmentedControl.anchor(top: view.safeAreaLayoutGuide.topAnchor,
+                                paddingTop: 8)
         segmentedControl.centerX(inView: view)
         
+        // tableView
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: tableViewCellIdentifier)
         view.addSubview(tableView)
         tableView.anchor(top: segmentedControl.bottomAnchor,
