@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 private let tableViewCellIdentifier = "ToDoListCell"
 
@@ -15,6 +16,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate {
     // MARK: - Properties
     
     private let disposeBag = DisposeBag()
+    
+    private var tasks = BehaviorRelay<[Task]>(value: [])
     
     private let segmentedControl: UISegmentedControl = {
         let items = ["All", "High", "Medium", "Low"]
@@ -48,7 +51,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate {
         let vc = AddTaskViewController()
         vc.taskSubjectObservable
             .subscribe(onNext: { task in
-                print(task)
+                
+                var existingTasks = self.tasks.value
+                existingTasks.append(task)
+                
+                self.tasks.accept(existingTasks)
             })
             .disposed(by: disposeBag)
         
