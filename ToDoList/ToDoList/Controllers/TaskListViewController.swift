@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import RxSwift
 
 private let tableViewCellIdentifier = "ToDoListCell"
 
 class TaskListViewController: UIViewController, UITableViewDelegate {
     
     // MARK: - Properties
+    
+    private let disposeBag = DisposeBag()
     
     private let segmentedControl: UISegmentedControl = {
         let items = ["All", "High", "Medium", "Low"]
@@ -43,8 +46,15 @@ class TaskListViewController: UIViewController, UITableViewDelegate {
     
     @objc private func addBarButtonPressed() {
         let vc = AddTaskViewController()
+        vc.taskSubjectObservable
+            .subscribe(onNext: { task in
+                print(task)
+            })
+            .disposed(by: disposeBag)
+        
         let navC = UINavigationController(rootViewController: vc)
         navC.modalPresentationStyle = .fullScreen
+        
         present(navC, animated: true, completion: nil)
     }
     

@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import RxSwift
 
 class AddTaskViewController: UIViewController {
     
     // MARK: - Properties
+    
+    private let taskSubject = PublishSubject<Task>()
+    var taskSubjectObservable: Observable<Task> {
+        return taskSubject.asObservable()
+    }
     
     private let segmentedControl: UISegmentedControl = {
         let items = ["High", "Medinum", "Low"]
@@ -49,7 +55,9 @@ class AddTaskViewController: UIViewController {
         
         let task = Task(title: title, priority: priority)
         
-        print(task)
+        taskSubject.onNext(task)
+        
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Helpers
