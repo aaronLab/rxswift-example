@@ -27,6 +27,7 @@
 		A4BE4680260A02D300BCA3D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4BE4688260A02ED00BCA3D7 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = RxSwift; path = ../RxSwift; sourceTree = "<group>"; };
 		A4BE468D260A030600BCA3D7 /* Ignore.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Ignore.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A4BE468F260A03FC00BCA3D7 /* ElementAt.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ElementAt.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +70,7 @@
 				A4BE467D260A02D300BCA3D7 /* LaunchScreen.storyboard */,
 				A4BE4680260A02D300BCA3D7 /* Info.plist */,
 				A4BE468D260A030600BCA3D7 /* Ignore.playground */,
+				A4BE468F260A03FC00BCA3D7 /* ElementAt.playground */,
 			);
 			path = FilteringOperators;
 			sourceTree = "<group>";
