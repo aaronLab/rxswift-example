@@ -12,6 +12,8 @@
 		A4D18CEC260B6A0A0045BD3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D18CEB260B6A0A0045BD3D /* Assets.xcassets */; };
 		A4D18CEF260B6A0A0045BD3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4D18CED260B6A0A0045BD3D /* LaunchScreen.storyboard */; };
 		A4D18CFC260B6A470045BD3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D18CFB260B6A470045BD3D /* MainViewController.swift */; };
+		A4D18CFF260B6B3D0045BD3D /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D18CFE260B6B3D0045BD3D /* APIKey.swift */; };
+		A4D18D02260B6B760045BD3D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D18D01260B6B760045BD3D /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		A4D18CEE260B6A0A0045BD3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4D18CF0260B6A0A0045BD3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4D18CFB260B6A470045BD3D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A4D18CFE260B6B3D0045BD3D /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		A4D18D01260B6B760045BD3D /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 				A4D18CEB260B6A0A0045BD3D /* Assets.xcassets */,
 				A4D18CED260B6A0A0045BD3D /* LaunchScreen.storyboard */,
 				A4D18CF0260B6A0A0045BD3D /* Info.plist */,
+				A4D18CFE260B6B3D0045BD3D /* APIKey.swift */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -75,6 +80,7 @@
 		A4D18CFA260B6A390045BD3D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A4D18D01260B6B760045BD3D /* UIView+Extension.swift */,
 				A4D18CFB260B6A470045BD3D /* MainViewController.swift */,
 			);
 			path = Views;
@@ -151,6 +157,8 @@
 			files = (
 				A4D18CFC260B6A470045BD3D /* MainViewController.swift in Sources */,
 				A4D18CE3260B6A090045BD3D /* AppDelegate.swift in Sources */,
+				A4D18CFF260B6B3D0045BD3D /* APIKey.swift in Sources */,
+				A4D18D02260B6B760045BD3D /* UIView+Extension.swift in Sources */,
 				A4D18CE5260B6A090045BD3D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
