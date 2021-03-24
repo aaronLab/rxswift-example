@@ -39,33 +39,17 @@ class MainViewController: UITableViewController {
     
     private func populateNews() {
         
-        guard let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(APIKey)") else { return }
-        
-        Observable.just(url)
-            .flatMap { url -> Observable<Data> in
-                
-                let request = URLRequest(url: url)
-                
-                return URLSession.shared.rx.data(request: request)
-                
-            }.map { data -> [Article]? in
-                
-                return try? JSONDecoder().decode(ArticleList.self, from: data).articles
-                
-            }.subscribe(onNext: { [weak self] articles in
+        URLRequest.load(resource: ArticleList.all)
+            .subscribe(onNext: { [weak self] result in
                 
                 guard let `self` = self else { return }
                 
-                if let articles = articles {
-                    
+                if let articles = result?.articles {
                     self.articles = articles
                     
                     DispatchQueue.main.async {
-                        
                         self.tableView.reloadData()
-                        
                     }
-                    
                 }
                 
             }).disposed(by: disposeBag)
