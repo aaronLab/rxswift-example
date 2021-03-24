@@ -13,6 +13,10 @@ class MainViewController: UITableViewController {
     
     // MARK: - Properties
     
+    private let disposeBag = DisposeBag()
+    
+    private var articles = [Article]()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -40,14 +44,17 @@ class MainViewController: UITableViewController {
                 
                 return URLSession.shared.rx.data(request: request)
                 
-            }
-            .map { data -> [Article]? in
+            }.map { data -> [Article]? in
+                
                 return try? JSONDecoder().decode(ArticleList.self, from: data).articles
+                
             }.subscribe(onNext: { [weak self] articles in
                 
                 guard let `self` = self else { return }
                 
                 if let articles = articles {
+                    
+                    self.articles = articles
                     
                     DispatchQueue.main.async {
                         
@@ -57,7 +64,7 @@ class MainViewController: UITableViewController {
                     
                 }
                 
-            })
+            }).disposed(by: disposeBag)
         
     }
     
