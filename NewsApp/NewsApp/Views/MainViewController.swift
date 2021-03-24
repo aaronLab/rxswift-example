@@ -9,6 +9,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+fileprivate let cellIdentifier = "NewsCell"
+
 class MainViewController: UITableViewController {
     
     // MARK: - Properties
@@ -31,6 +33,8 @@ class MainViewController: UITableViewController {
         title = "Good News"
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        tableView.register(NewsCell.self, forCellReuseIdentifier: cellIdentifier)
     }
     
     private func populateNews() {
@@ -66,6 +70,31 @@ class MainViewController: UITableViewController {
                 
             }).disposed(by: disposeBag)
         
+    }
+    
+}
+
+// MARK: - DataSource
+
+extension MainViewController {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? NewsCell else {
+            fatalError("NewsCell not found.")
+        }
+        
+        cell.labelTitle.text = articles[indexPath.row].title ?? ""
+        cell.labelDescription.text = articles[indexPath.row].description ?? ""
+        
+        return cell
     }
     
 }
