@@ -6,10 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+//import RxCocoa
 
 class MainViewController: UIViewController {
     
     // MARK: - Properties
+    
+    private let disposeBag = DisposeBag()
     
     private let textField: UITextField = {
         let tf = CustomTextField(placeholder: "Search here...")
@@ -18,14 +22,14 @@ class MainViewController: UIViewController {
     
     private let labelTemperature: UILabel = {
         let lb = UILabel()
-        lb.text = "Temperature"
+        lb.text = "N/A"
         lb.font = .systemFont(ofSize: 40, weight: .bold)
         return lb
     }()
     
     private let labelHumidity: UILabel = {
         let lb = UILabel()
-        lb.text = "Humidity"
+        lb.text = "N/A"
         lb.font = .systemFont(ofSize: 26)
         return lb
     }()
@@ -35,6 +39,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        setupTextField()
     }
     
     // MARK: - Helpers
@@ -69,7 +74,51 @@ class MainViewController: UIViewController {
         stack.addArrangedSubview(labelTemperature)
         stack.addArrangedSubview(labelHumidity)
     }
-
+    
+    private func setupTextField() {
+        textField.rx.value
+            .subscribe(onNext: { city in
+                
+                guard let city = city else { return }
+                
+                if city.isEmpty {
+                    self.displayWeather(nil)
+                } else {
+                    self.fetchWeather(by: city)
+                }
+                
+            }).disposed(by: disposeBag)
+    }
+    
+    private func displayWeather(_ weather: Weather?) {
+        guard let weather = weather,
+              let temp = weather.temp,
+              let humidity = weather.humidity else {
+            labelTemperature.text = "N/A"
+            labelHumidity.text = "N/A"
+            return
+        }
+        
+        DispatchQueue.main.async {
+            self.labelTemperature.text = "\(temp) C"
+            self.labelHumidity.text = "\(humidity) %"
+        }
+        
+    }
+    
+    private func fetchWeather(by city: String) {
+        guard let cityEncoded = city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed),
+              let url = URL.urlForWeatherAPI(city: cityEncoded) else { return }
+        
+        let resource = Resource<WeatherResponse>(url: url)
+        
+        URLRequest.load(resource: resource)
+            .catchAndReturn(WeatherResponse.empty)
+            .subscribe(onNext: { [weak self] result in
+                guard let weather = result.main else { return }
+                self?.displayWeather(weather)
+            }).disposed(by: disposeBag)
+    }
 
 }
 
