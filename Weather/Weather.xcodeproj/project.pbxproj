@@ -15,6 +15,7 @@
 		A425BCE4260CCEAF008A6207 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425BCE3260CCEAF008A6207 /* APIKey.swift */; };
 		A425BCEB260CCFF5008A6207 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425BCEA260CCFF5008A6207 /* UIView+Extensions.swift */; };
 		A425BCEE260CD0FF008A6207 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425BCED260CD0FF008A6207 /* CustomTextField.swift */; };
+		A425BCF2260CD4A5008A6207 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425BCF1260CD4A5008A6207 /* WeatherResponse.swift */; };
 		E4D52D5682F356F9FC065507 /* Pods_Weather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32FF1A138A03E13C2CC38C08 /* Pods_Weather.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		A425BCE3260CCEAF008A6207 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		A425BCEA260CCFF5008A6207 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A425BCED260CD0FF008A6207 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A425BCF1260CD4A5008A6207 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 		A72C3A49D4F7918DE252CF60 /* Pods-Weather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather.debug.xcconfig"; path = "Target Support Files/Pods-Weather/Pods-Weather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 			children = (
 				A425BCE6260CCEC7008A6207 /* Application */,
 				A425BCE8260CCF17008A6207 /* View */,
+				A425BCF0260CD48F008A6207 /* Model */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -102,6 +105,14 @@
 				A425BCED260CD0FF008A6207 /* CustomTextField.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A425BCF0260CD48F008A6207 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A425BCF1260CD4A5008A6207 /* WeatherResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		AFCA7FD96081344DFF6EBDE4 /* Pods */ = {
@@ -229,6 +240,7 @@
 				A425BCCE260CCE43008A6207 /* MainViewController.swift in Sources */,
 				A425BCCA260CCE43008A6207 /* AppDelegate.swift in Sources */,
 				A425BCEE260CD0FF008A6207 /* CustomTextField.swift in Sources */,
+				A425BCF2260CD4A5008A6207 /* WeatherResponse.swift in Sources */,
 				A425BCEB260CCFF5008A6207 /* UIView+Extensions.swift in Sources */,
 				A425BCE4260CCEAF008A6207 /* APIKey.swift in Sources */,
 				A425BCCC260CCE43008A6207 /* SceneDelegate.swift in Sources */,
