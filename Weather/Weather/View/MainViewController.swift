@@ -117,7 +117,10 @@ class MainViewController: UIViewController {
         
         let search = URLRequest.load(resource: resource)
             .observe(on: MainScheduler.instance)
-            .asDriver(onErrorJustReturn: WeatherResponse.empty)
+            .catch { error in
+                print(error.localizedDescription)
+                return Observable.just(WeatherResponse.empty)
+            }.asDriver(onErrorJustReturn: WeatherResponse.empty)
         
         search.map { "\($0.main?.temp ?? 0) C" }
             .drive(labelTemperature.rx.text)
