@@ -17,19 +17,20 @@ class MainViewController: UIViewController {
     
     private let textField: UITextField = {
         let tf = CustomTextField(placeholder: "Search here...")
+        tf.returnKeyType = .search
         return tf
     }()
     
     private let labelTemperature: UILabel = {
         let lb = UILabel()
-        lb.text = "N/A"
+        lb.text = "Temperature"
         lb.font = .systemFont(ofSize: 40, weight: .bold)
         return lb
     }()
     
     private let labelHumidity: UILabel = {
         let lb = UILabel()
-        lb.text = "N/A"
+        lb.text = "Humidity"
         lb.font = .systemFont(ofSize: 26)
         return lb
     }()
@@ -76,26 +77,30 @@ class MainViewController: UIViewController {
     }
     
     private func setupTextField() {
-        textField.rx.value
-            .subscribe(onNext: { city in
+        
+        textField.rx.controlEvent(.editingDidEndOnExit)
+            .asObservable()
+            .map { self.textField.text }
+            .subscribe(onNext: { [weak self] city in
                 
-                guard let city = city else { return }
-                
-                if city.isEmpty {
-                    self.displayWeather(nil)
-                } else {
-                    self.fetchWeather(by: city)
+                if let city = city {
+                    if city.isEmpty {
+                        self?.displayWeather(nil)
+                    } else {
+                        self?.fetchWeather(by: city)
+                    }
                 }
                 
             }).disposed(by: disposeBag)
+        
     }
     
     private func displayWeather(_ weather: Weather?) {
         guard let weather = weather,
               let temp = weather.temp,
               let humidity = weather.humidity else {
-            labelTemperature.text = "N/A"
-            labelHumidity.text = "N/A"
+            labelTemperature.text = "Temperature"
+            labelHumidity.text = "Humidity"
             return
         }
         
