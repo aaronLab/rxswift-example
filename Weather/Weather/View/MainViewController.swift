@@ -116,6 +116,7 @@ class MainViewController: UIViewController {
         let resource = Resource<WeatherResponse>(url: url)
         
         let search = URLRequest.load(resource: resource)
+            .retry(3)
             .observe(on: MainScheduler.instance)
             .catch { error in
                 print(error.localizedDescription)
