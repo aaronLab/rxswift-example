@@ -84,9 +84,7 @@ class MainViewController: UIViewController {
             .subscribe(onNext: { [weak self] city in
                 
                 if let city = city {
-                    if city.isEmpty {
-                        self?.displayWeather(nil)
-                    } else {
+                    if !city.isEmpty {
                         self?.fetchWeather(by: city)
                     }
                 }
@@ -117,12 +115,17 @@ class MainViewController: UIViewController {
         
         let resource = Resource<WeatherResponse>(url: url)
         
-        URLRequest.load(resource: resource)
+        let search = URLRequest.load(resource: resource)
+            .observe(on: MainScheduler.instance)
             .catchAndReturn(WeatherResponse.empty)
-            .subscribe(onNext: { [weak self] result in
-                guard let weather = result.main else { return }
-                self?.displayWeather(weather)
-            }).disposed(by: disposeBag)
+        
+        search.map { "\($0.main?.temp ?? 0) C" }
+            .bind(to: self.labelTemperature.rx.text)
+            .disposed(by: disposeBag)
+        
+        search.map { "\($0.main?.humidity ?? 0) %" }
+            .bind(to: self.labelHumidity.rx.text)
+            .disposed(by: disposeBag)
     }
 
 }
