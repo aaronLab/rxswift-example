@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class MainViewController: UITableViewController {
     
@@ -13,11 +14,14 @@ class MainViewController: UITableViewController {
     
     // MARK: - Properties
     
+    private let disposeBag = DisposeBag()
+    
     // MARK: - Lifecycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        populateNews()
     }
     
     // MARK: - Actions
@@ -28,6 +32,17 @@ class MainViewController: UITableViewController {
         view.backgroundColor = .white
         title = "News"
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    private func populateNews() {
+        
+        let resource = Resource<ArticleResponse>(url: URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=\(APIKey)")!)
+        
+        URLRequest.load(resource: resource)
+            .subscribe(onNext: {
+                print($0)
+            }).disposed(by: disposeBag)
+        
     }
     
 }
