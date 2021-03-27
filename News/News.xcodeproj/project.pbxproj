@@ -14,6 +14,7 @@
 		A453FBA4260F30AA009055D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453FBA3260F30AA009055D8 /* MainViewController.swift */; };
 		A453FBA9260F3216009055D8 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453FBA8260F3216009055D8 /* UIView+Extensions.swift */; };
 		A453FBAC260F323C009055D8 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453FBAB260F323C009055D8 /* APIKey.swift */; };
+		A453FBB0260F332E009055D8 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = A453FBAF260F332E009055D8 /* Article.swift */; };
 		F2B6CC70D8ECC32BDDCA004E /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EF8AFBF63D4ED0707AAB341 /* Pods_News.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		A453FBA3260F30AA009055D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A453FBA8260F3216009055D8 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A453FBAB260F323C009055D8 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		A453FBAF260F332E009055D8 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		A453FBA0260F3088009055D8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A453FBAF260F332E009055D8 /* Article.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				A453FBA4260F30AA009055D8 /* MainViewController.swift in Sources */,
 				A453FB7A260F2F9B009055D8 /* AppDelegate.swift in Sources */,
+				A453FBB0260F332E009055D8 /* Article.swift in Sources */,
 				A453FBA9260F3216009055D8 /* UIView+Extensions.swift in Sources */,
 				A453FB7C260F2F9B009055D8 /* SceneDelegate.swift in Sources */,
 				A453FBAC260F323C009055D8 /* APIKey.swift in Sources */,
