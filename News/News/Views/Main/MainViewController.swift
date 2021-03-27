@@ -7,7 +7,9 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UITableViewController {
+    
+    private let cellIdentifier = "NewsCell"
     
     // MARK: - Properties
     
