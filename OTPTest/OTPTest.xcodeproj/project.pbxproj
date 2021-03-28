@@ -140,6 +140,7 @@
 		A432ABD526106847000D154E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A432ABF1261070B8000D154E /* APIResponse.swift */,
 				A432ABDE261068E7000D154E /* Responses */,
 				A432ABDD261068E2000D154E /* Requests */,
 			);
@@ -173,7 +174,6 @@
 		A432ABDE261068E7000D154E /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				A432ABF1261070B8000D154E /* APIResponse.swift */,
 				A432ABEE26107080000D154E /* OTPSendResponse.swift */,
 			);
 			path = Responses;
