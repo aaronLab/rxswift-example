@@ -21,6 +21,7 @@
 		A432ABEF26107080000D154E /* OTPSendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABEE26107080000D154E /* OTPSendResponse.swift */; };
 		A432ABF2261070B8000D154E /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABF1261070B8000D154E /* APIResponse.swift */; };
 		A432ABFA2610777A000D154E /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABF92610777A000D154E /* APIKey.swift */; };
+		A432ABFE26107F38000D154E /* OTPConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABFD26107F38000D154E /* OTPConfirmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		A432ABEE26107080000D154E /* OTPSendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPSendResponse.swift; sourceTree = "<group>"; };
 		A432ABF1261070B8000D154E /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 		A432ABF92610777A000D154E /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		A432ABFD26107F38000D154E /* OTPConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPConfirmViewController.swift; sourceTree = "<group>"; };
 		C022F36D6FCBDBBA7F869428 /* Pods_OTPTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OTPTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				A432ABD82610686C000D154E /* OTPSend */,
+				A432ABFC26107F2D000D154E /* OTPConfirm */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +185,14 @@
 				A432ABE126106E77000D154E /* BaseViewController.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A432ABFC26107F2D000D154E /* OTPConfirm */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABFD26107F38000D154E /* OTPConfirmViewController.swift */,
+			);
+			path = OTPConfirm;
 			sourceTree = "<group>";
 		};
 		C2949CF2D5DB6AE3892198EE /* Frameworks */ = {
@@ -314,6 +325,7 @@
 				A432ABFA2610777A000D154E /* APIKey.swift in Sources */,
 				A432ABCB26106772000D154E /* URLSession+Ext.swift in Sources */,
 				A432ABDA2610687A000D154E /* OTPSendViewController.swift in Sources */,
+				A432ABFE26107F38000D154E /* OTPConfirmViewController.swift in Sources */,
 				A432ABB42610668D000D154E /* SceneDelegate.swift in Sources */,
 				A432ABEC26107062000D154E /* OTPSendRequestBody.swift in Sources */,
 			);
