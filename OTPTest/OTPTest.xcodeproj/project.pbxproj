@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59AE5C422C8565A8E5C10310 /* Pods_OTPTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C022F36D6FCBDBBA7F869428 /* Pods_OTPTest.framework */; };
+		A432ABB22610668D000D154E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABB12610668D000D154E /* AppDelegate.swift */; };
+		A432ABB42610668D000D154E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABB32610668D000D154E /* SceneDelegate.swift */; };
+		A432ABBB26106690000D154E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A432ABBA26106690000D154E /* Assets.xcassets */; };
+		A432ABBE26106690000D154E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A432ABBC26106690000D154E /* LaunchScreen.storyboard */; };
+		A432ABCB26106772000D154E /* URLSession+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABCA26106772000D154E /* URLSession+Ext.swift */; };
+		A432ABDA2610687A000D154E /* OTPSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABD92610687A000D154E /* OTPSendViewController.swift */; };
+		A432ABE226106E77000D154E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABE126106E77000D154E /* BaseViewController.swift */; };
+		A432ABE626106EED000D154E /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABE526106EED000D154E /* UIView+Ext.swift */; };
+		A432ABE92610701C000D154E /* OTPSendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABE82610701C000D154E /* OTPSendViewModel.swift */; };
+		A432ABEC26107062000D154E /* OTPSendRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABEB26107062000D154E /* OTPSendRequestBody.swift */; };
+		A432ABEF26107080000D154E /* OTPSendResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABEE26107080000D154E /* OTPSendResponse.swift */; };
+		A432ABF2261070B8000D154E /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABF1261070B8000D154E /* APIResponse.swift */; };
+		A432ABFA2610777A000D154E /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A432ABF92610777A000D154E /* APIKey.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		62C1A8DF847A4664A7FE6CB8 /* Pods-OTPTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTPTest.debug.xcconfig"; path = "Target Support Files/Pods-OTPTest/Pods-OTPTest.debug.xcconfig"; sourceTree = "<group>"; };
+		6837AE4BD24409CACAD4BEF2 /* Pods-OTPTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTPTest.release.xcconfig"; path = "Target Support Files/Pods-OTPTest/Pods-OTPTest.release.xcconfig"; sourceTree = "<group>"; };
+		A432ABAE2610668D000D154E /* OTPTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTPTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A432ABB12610668D000D154E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A432ABB32610668D000D154E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A432ABBA26106690000D154E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A432ABBD26106690000D154E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A432ABBF26106690000D154E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A432ABCA26106772000D154E /* URLSession+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Ext.swift"; sourceTree = "<group>"; };
+		A432ABD92610687A000D154E /* OTPSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPSendViewController.swift; sourceTree = "<group>"; };
+		A432ABE126106E77000D154E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A432ABE526106EED000D154E /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		A432ABE82610701C000D154E /* OTPSendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPSendViewModel.swift; sourceTree = "<group>"; };
+		A432ABEB26107062000D154E /* OTPSendRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPSendRequestBody.swift; sourceTree = "<group>"; };
+		A432ABEE26107080000D154E /* OTPSendResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPSendResponse.swift; sourceTree = "<group>"; };
+		A432ABF1261070B8000D154E /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		A432ABF92610777A000D154E /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		C022F36D6FCBDBBA7F869428 /* Pods_OTPTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OTPTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A432ABAB2610668D000D154E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59AE5C422C8565A8E5C10310 /* Pods_OTPTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03ACDBDF0E5547541688AEFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				62C1A8DF847A4664A7FE6CB8 /* Pods-OTPTest.debug.xcconfig */,
+				6837AE4BD24409CACAD4BEF2 /* Pods-OTPTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A432ABA52610668D000D154E = {
+			isa = PBXGroup;
+			children = (
+				A432ABB02610668D000D154E /* OTPTest */,
+				A432ABAF2610668D000D154E /* Products */,
+				03ACDBDF0E5547541688AEFF /* Pods */,
+				C2949CF2D5DB6AE3892198EE /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A432ABAF2610668D000D154E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABAE2610668D000D154E /* OTPTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A432ABB02610668D000D154E /* OTPTest */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABC72610673A000D154E /* Application */,
+				A432ABD62610684D000D154E /* View Models */,
+				A432ABD42610683E000D154E /* Views */,
+				A432ABD526106847000D154E /* Models */,
+				A432ABC826106741000D154E /* Core */,
+			);
+			path = OTPTest;
+			sourceTree = "<group>";
+		};
+		A432ABC72610673A000D154E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABB12610668D000D154E /* AppDelegate.swift */,
+				A432ABB32610668D000D154E /* SceneDelegate.swift */,
+				A432ABBA26106690000D154E /* Assets.xcassets */,
+				A432ABBC26106690000D154E /* LaunchScreen.storyboard */,
+				A432ABBF26106690000D154E /* Info.plist */,
+				A432ABF92610777A000D154E /* APIKey.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		A432ABC826106741000D154E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABE026106E6E000D154E /* Protocols */,
+				A432ABC926106755000D154E /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A432ABC926106755000D154E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABCA26106772000D154E /* URLSession+Ext.swift */,
+				A432ABE526106EED000D154E /* UIView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A432ABD42610683E000D154E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABD82610686C000D154E /* OTPSend */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A432ABD526106847000D154E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABDE261068E7000D154E /* Responses */,
+				A432ABDD261068E2000D154E /* Requests */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A432ABD62610684D000D154E /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABE82610701C000D154E /* OTPSendViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		A432ABD82610686C000D154E /* OTPSend */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABD92610687A000D154E /* OTPSendViewController.swift */,
+			);
+			path = OTPSend;
+			sourceTree = "<group>";
+		};
+		A432ABDD261068E2000D154E /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABEB26107062000D154E /* OTPSendRequestBody.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		A432ABDE261068E7000D154E /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABF1261070B8000D154E /* APIResponse.swift */,
+				A432ABEE26107080000D154E /* OTPSendResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		A432ABE026106E6E000D154E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A432ABE126106E77000D154E /* BaseViewController.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C2949CF2D5DB6AE3892198EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C022F36D6FCBDBBA7F869428 /* Pods_OTPTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A432ABAD2610668D000D154E /* OTPTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A432ABC226106690000D154E /* Build configuration list for PBXNativeTarget "OTPTest" */;
+			buildPhases = (
+				71A8566063E0905361CD310A /* [CP] Check Pods Manifest.lock */,
+				A432ABAA2610668D000D154E /* Sources */,
+				A432ABAB2610668D000D154E /* Frameworks */,
+				A432ABAC2610668D000D154E /* Resources */,
+				3ECDD0098BDD4E4CD9E39731 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OTPTest;
+			productName = OTPTest;
+			productReference = A432ABAE2610668D000D154E /* OTPTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A432ABA62610668D000D154E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					A432ABAD2610668D000D154E = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = A432ABA92610668D000D154E /* Build configuration list for PBXProject "OTPTest" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A432ABA52610668D000D154E;
+			productRefGroup = A432ABAF2610668D000D154E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A432ABAD2610668D000D154E /* OTPTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A432ABAC2610668D000D154E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A432ABBE26106690000D154E /* LaunchScreen.storyboard in Resources */,
+				A432ABBB26106690000D154E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3ECDD0098BDD4E4CD9E39731 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OTPTest/Pods-OTPTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OTPTest/Pods-OTPTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OTPTest/Pods-OTPTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71A8566063E0905361CD310A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OTPTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A432ABAA2610668D000D154E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A432ABEF26107080000D154E /* OTPSendResponse.swift in Sources */,
+				A432ABE226106E77000D154E /* BaseViewController.swift in Sources */,
+				A432ABB22610668D000D154E /* AppDelegate.swift in Sources */,
+				A432ABF2261070B8000D154E /* APIResponse.swift in Sources */,
+				A432ABE92610701C000D154E /* OTPSendViewModel.swift in Sources */,
+				A432ABE626106EED000D154E /* UIView+Ext.swift in Sources */,
+				A432ABFA2610777A000D154E /* APIKey.swift in Sources */,
+				A432ABCB26106772000D154E /* URLSession+Ext.swift in Sources */,
+				A432ABDA2610687A000D154E /* OTPSendViewController.swift in Sources */,
+				A432ABB42610668D000D154E /* SceneDelegate.swift in Sources */,
+				A432ABEC26107062000D154E /* OTPSendRequestBody.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A432ABBC26106690000D154E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A432ABBD26106690000D154E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A432ABC026106690000D154E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A432ABC126106690000D154E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A432ABC326106690000D154E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62C1A8DF847A4664A7FE6CB8 /* Pods-OTPTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6U769Q36UT;
+				INFOPLIST_FILE = OTPTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.aaronlab.OTPTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A432ABC426106690000D154E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6837AE4BD24409CACAD4BEF2 /* Pods-OTPTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6U769Q36UT;
+				INFOPLIST_FILE = OTPTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.aaronlab.OTPTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A432ABA92610668D000D154E /* Build configuration list for PBXProject "OTPTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A432ABC026106690000D154E /* Debug */,
+				A432ABC126106690000D154E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A432ABC226106690000D154E /* Build configuration list for PBXNativeTarget "OTPTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A432ABC326106690000D154E /* Debug */,
+				A432ABC426106690000D154E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A432ABA62610668D000D154E /* Project object */;
+}
