@@ -47,14 +47,8 @@ class OTPSendViewModel: OTPSendViewBindable {
                 
                 URLSession.load(request: request, httpMethod: .post, headers: headers, body: body)
                     .retry(3)
-//                    .catch({ error -> Observable<OTPSendResponse> in
-//                        self.onError.onNext(true)
-//                        return Observable.empty()
-//                    })
                     .subscribe(onNext: { response in
-                        
                         self.sendOTPResponse.onNext(response)
-                        
                     })
                     .disposed(by: self.disposeBag)
                 
