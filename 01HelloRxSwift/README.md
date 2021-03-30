@@ -77,3 +77,89 @@ var currentIndex = 0
    - Resilient
    - Elastic
    - Message-driven
+
+# Foundation of RxSwift
+
+Observables, operators, schedulers.
+
+## Observables
+
+`Observable<Element>`
+
+The ability to asynchronously produce a sequence of events that can "carry" an immutable snapshot of generic data of type `Element`.
+
+- A `next` event
+
+- A `completed` event
+
+- An `error` event
+
+### Finite observable sequences
+
+When you download a file from the Internet...
+
+- Start the download and start observing for incoming data.
+
+- Repeatedly receive chunks of data as parts of the file arrive.
+
+- Bad connection: the download will stop and the connection will time out + error.
+
+- When the all the file's data, it'll be completed.
+
+```Swift
+API.download(file: "http://www...")
+   .subscribe(
+     onNext: { data in
+      // Append data to temporary file
+     },
+     onError: { error in
+       // Display error to user
+     },
+     onCompleted: {
+       // Use downloaded file
+     }
+    )
+```
+
+### Infinite observable sequences
+
+When you need to react to device orientation changes...
+
+```Swift
+UIDevice.rx.orientation
+  .subscribe(onNext: { current in
+    switch current {
+    case .landscape:
+      // Re-arrange UI for landscape
+    case .portrait:
+      // Re-arrange UI for portrait
+    }
+  })
+```
+
+## Operators
+
+Abstract discrete pieces of asynchronous work and event manipulations.
+
+- filter, map, and so on...
+
+```Swift
+UIDevice.rx.orientation
+  .filter { $0 != .landscape }
+  .map { _ in "Portrait is the best!" }
+  .subscribe(onNext: { string in
+    showAlert(text: string)
+  })
+```
+
+## Schedulers
+
+The Rx equivalent of dispatch queus or operation queus.
+
+- Network
+  1. fetch JSON: Custom NSOperation Scheduler
+  2. process JSON: Background Concurrent Scheduler
+  3. display to UI: Main Thread Serial Scheduler
+- Data Bindings
+  1. data update: Background Concurrent Scheduler
+  2. display to UI: Main Thread Serial Scheduler
