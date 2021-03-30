@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,7 @@
 		A4B6F2F526136575004095FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4B6F2F826136575004095FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4B6F2FA26136575004095FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4B6F30826136C1E004095FD /* Observable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Observable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C4E46151CF79E6EAF53016F4 /* Pods-02Observables.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-02Observables.debug.xcconfig"; path = "Target Support Files/Pods-02Observables/Pods-02Observables.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +49,6 @@
 				C4E46151CF79E6EAF53016F4 /* Pods-02Observables.debug.xcconfig */,
 				2A93D8186012DCA88687DC15 /* Pods-02Observables.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,6 +73,15 @@
 		A4B6F2EB26136574004095FD /* 02Observables */ = {
 			isa = PBXGroup;
 			children = (
+				A4B6F306261365FF004095FD /* Application */,
+				A4B6F30726136609004095FD /* Playgrounds */,
+			);
+			path = 02Observables;
+			sourceTree = "<group>";
+		};
+		A4B6F306261365FF004095FD /* Application */ = {
+			isa = PBXGroup;
+			children = (
 				A4B6F2EC26136574004095FD /* AppDelegate.swift */,
 				A4B6F2EE26136574004095FD /* SceneDelegate.swift */,
 				A4B6F2F026136574004095FD /* ViewController.swift */,
@@ -81,7 +90,15 @@
 				A4B6F2F726136575004095FD /* LaunchScreen.storyboard */,
 				A4B6F2FA26136575004095FD /* Info.plist */,
 			);
-			path = 02Observables;
+			name = Application;
+			sourceTree = "<group>";
+		};
+		A4B6F30726136609004095FD /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				A4B6F30826136C1E004095FD /* Observable.playground */,
+			);
+			path = Playgrounds;
 			sourceTree = "<group>";
 		};
 		E8127AFA8BE5F97B33B7A042 /* Frameworks */ = {
