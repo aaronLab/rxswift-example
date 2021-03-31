@@ -19,6 +19,7 @@
 /* Begin PBXFileReference section */
 		082CBBD9F7F73EBECCC7B30B /* Pods_02Observables.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_02Observables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A93D8186012DCA88687DC15 /* Pods-02Observables.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-02Observables.release.xcconfig"; path = "Target Support Files/Pods-02Observables/Pods-02Observables.release.xcconfig"; sourceTree = "<group>"; };
+		A43C3DD02614730900DCD263 /* Disposing+Terminating.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Disposing+Terminating.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4B6F2E926136574004095FD /* 02Observables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 02Observables.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B6F2EC26136574004095FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B6F2EE26136574004095FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				A4B6F30826136C1E004095FD /* Observable.playground */,
+				A43C3DD02614730900DCD263 /* Disposing+Terminating.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
