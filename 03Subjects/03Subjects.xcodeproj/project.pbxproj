@@ -28,6 +28,7 @@
 		A4964D0A2614A0C900E329B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4964D0D2614A0C900E329B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4964D0F2614A0C900E329B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4B057642614AAAD00A76247 /* BehaviorSubject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BehaviorSubject.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		CC50C0F98769304FBA725962 /* Pods_03Subjects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_03Subjects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -70,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				A44487862614A1DA0005D34E /* Subjects.playground */,
+				A4B057642614AAAD00A76247 /* BehaviorSubject.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
