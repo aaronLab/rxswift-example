@@ -19,6 +19,7 @@
 /* Begin PBXFileReference section */
 		4839AE6E1B8D76AB1F997CC5 /* Pods-03Subjects.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-03Subjects.debug.xcconfig"; path = "Target Support Files/Pods-03Subjects/Pods-03Subjects.debug.xcconfig"; sourceTree = "<group>"; };
 		7481C1B314C26B0D739B5938 /* Pods-03Subjects.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-03Subjects.release.xcconfig"; path = "Target Support Files/Pods-03Subjects/Pods-03Subjects.release.xcconfig"; sourceTree = "<group>"; };
+		A44487862614A1DA0005D34E /* Subjects.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subjects.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4964CFE2614A0C800E329B2 /* 03Subjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 03Subjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4964D012614A0C800E329B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4964D032614A0C800E329B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		A44487842614A11A0005D34E /* Playgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				A44487862614A1DA0005D34E /* Subjects.playground */,
 			);
 			path = Playgrounds;
 			sourceTree = "<group>";
