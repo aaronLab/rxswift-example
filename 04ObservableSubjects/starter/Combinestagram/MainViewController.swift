@@ -46,16 +46,32 @@ class MainViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    images.subscribe(onNext: { [weak imagePreview] photos in
-      
-      guard let preview = imagePreview else { return }
-      
-      DispatchQueue.main.async {
+    
+    images
+      .subscribe(onNext: { [weak imagePreview] photos in
+        
+        guard let preview = imagePreview else { return }
+        
         preview.image = photos.collage(size: preview.frame.size)
-      }
-      
-    })
-    .disposed(by: bag)
+        
+      })
+      .disposed(by: bag)
+    
+    images
+      .subscribe(onNext: { [weak self] photos in
+        
+        self?.updateUI(photos: photos)
+        
+      })
+      .disposed(by: bag)
+    
+  }
+  
+  private func updateUI(photos: [UIImage]) {
+    buttonSave.isEnabled = photos.count > 0 && photos.count % 2 == 0
+    buttonClear.isEnabled = photos.count > 0
+    itemAdd.isEnabled = photos.count < 6
+    title = photos.count > 0 ? "\(photos.count) photos" : "Collage"
   }
   
   @IBAction func actionClear() {
