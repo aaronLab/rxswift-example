@@ -86,7 +86,19 @@ class MainViewController: UIViewController {
     guard let photosViewController = storyboard?.instantiateViewController(withIdentifier: "PhotosViewController") as? PhotosViewController else {
       fatalError("PhotosViewController not found")
     }
-
+    
+    photosViewController.selectedPhotos
+      .subscribe(
+        onNext: { [weak self] newImage in
+          guard let images = self?.images else { return }
+          images.accept(images.value + [newImage])
+        },
+        onDisposed: {
+          print("Completed photo selection")
+        }
+      )
+      .disposed(by: bag)
+    
     navigationController?.pushViewController(photosViewController, animated: true)
   }
   
