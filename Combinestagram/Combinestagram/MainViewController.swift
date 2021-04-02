@@ -44,6 +44,8 @@ class MainViewController: UIViewController {
   @IBOutlet weak var buttonSave: UIButton!
   @IBOutlet weak var itemAdd: UIBarButtonItem!
   
+  private var imageCache = [Int]()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -76,6 +78,7 @@ class MainViewController: UIViewController {
   
   @IBAction func actionClear() {
     images.accept([])
+    imageCache = []
   }
   
   @IBAction func actionSave() {
@@ -103,7 +106,25 @@ class MainViewController: UIViewController {
       fatalError("PhotosViewController not found")
     }
     
-    photosViewController.selectedPhotos
+    let newPhotos = photosViewController.selectedPhotos
+      .share() // Share
+    
+    newPhotos
+      .takeWhile({ [weak self] image in
+        let count = self?.images.value.count ?? 0
+        return count < 6
+      })
+      .filter { [weak self] newImage in
+        let len = newImage.pngData()?.count ?? 0
+        
+        guard self?.imageCache.contains(len) == false else {
+          return false
+        }
+        
+        self?.imageCache.append(len)
+        
+        return true
+      }
       .subscribe(
         onNext: { [weak self] newImage in
           guard let images = self?.images else { return }
@@ -116,6 +137,29 @@ class MainViewController: UIViewController {
       .disposed(by: bag)
     
     navigationController?.pushViewController(photosViewController, animated: true)
+    
+    newPhotos
+      .ignoreElements()
+      .subscribe(onCompleted: { [weak self] in
+        
+        self?.updateNavigationIcon()
+        
+      })
+      .disposed(by: bag)
+    
+  }
+  
+  private func updateNavigationIcon() {
+    
+    let icon = imagePreview.image?
+      .scaled(CGSize(width: 22, height: 22))
+      .withRenderingMode(.alwaysOriginal)
+    
+    navigationItem.leftBarButtonItem = UIBarButtonItem(image: icon,
+                                                       style: .done,
+                                                       target: nil,
+                                                       action: nil)
+    
   }
   
   func showMessage(_ title: String, description: String? = nil) {
