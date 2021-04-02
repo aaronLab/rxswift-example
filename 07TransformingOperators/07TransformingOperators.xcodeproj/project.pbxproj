@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 /* Begin PBXFileReference section */
 		6181E42C32CC621ABF611352 /* Pods-07TransformingOperators.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-07TransformingOperators.release.xcconfig"; path = "Target Support Files/Pods-07TransformingOperators/Pods-07TransformingOperators.release.xcconfig"; sourceTree = "<group>"; };
 		947E32A464DC40E9CA4189C0 /* Pods-07TransformingOperators.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-07TransformingOperators.debug.xcconfig"; path = "Target Support Files/Pods-07TransformingOperators/Pods-07TransformingOperators.debug.xcconfig"; sourceTree = "<group>"; };
+		A43689F02617535400D55937 /* Transforming.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Transforming.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A4C65C46261746B300B85F11 /* 07TransformingOperators.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 07TransformingOperators.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C65C49261746B300B85F11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4C65C4B261746B300B85F11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 				947E32A464DC40E9CA4189C0 /* Pods-07TransformingOperators.debug.xcconfig */,
 				6181E42C32CC621ABF611352 /* Pods-07TransformingOperators.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -58,6 +58,28 @@
 				C629960FFD0BEBDD5837E8E6 /* Pods_07TransformingOperators.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A43689EC2617532500D55937 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A4C65C49261746B300B85F11 /* AppDelegate.swift */,
+				A4C65C4B261746B300B85F11 /* SceneDelegate.swift */,
+				A4C65C4D261746B300B85F11 /* ViewController.swift */,
+				A4C65C4F261746B300B85F11 /* Main.storyboard */,
+				A4C65C52261746B600B85F11 /* Assets.xcassets */,
+				A4C65C54261746B600B85F11 /* LaunchScreen.storyboard */,
+				A4C65C57261746B600B85F11 /* Info.plist */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		A43689EE2617532E00D55937 /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				A43689F02617535400D55937 /* Transforming.playground */,
+			);
+			path = Playground;
 			sourceTree = "<group>";
 		};
 		A4C65C3D261746B300B85F11 = {
@@ -81,13 +103,8 @@
 		A4C65C48261746B300B85F11 /* 07TransformingOperators */ = {
 			isa = PBXGroup;
 			children = (
-				A4C65C49261746B300B85F11 /* AppDelegate.swift */,
-				A4C65C4B261746B300B85F11 /* SceneDelegate.swift */,
-				A4C65C4D261746B300B85F11 /* ViewController.swift */,
-				A4C65C4F261746B300B85F11 /* Main.storyboard */,
-				A4C65C52261746B600B85F11 /* Assets.xcassets */,
-				A4C65C54261746B600B85F11 /* LaunchScreen.storyboard */,
-				A4C65C57261746B600B85F11 /* Info.plist */,
+				A43689EE2617532E00D55937 /* Playground */,
+				A43689EC2617532500D55937 /* Application */,
 			);
 			path = 07TransformingOperators;
 			sourceTree = "<group>";
