@@ -35,4 +35,14 @@ Observable.of(1, 2, 3, 4, 5, 6)
         print($0)
     })
     .disposed(by: bag)
+
+Observable.of("To", "be", nil, "or", "not", "to", "be", nil)
+    .compactMap { $0 }
+    .toArray()
+    .map { $0.joined(separator: " ") }
+    .subscribe(onSuccess: {
+        print($0)
+    })
+    .disposed(by: bag)
+
     
