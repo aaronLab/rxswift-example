@@ -50,6 +50,7 @@ class MainViewController: UIViewController {
     super.viewDidLoad()
     
     images
+      .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
       .subscribe(onNext: { [weak imagePreview] photos in
         
         guard let preview = imagePreview else { return }
