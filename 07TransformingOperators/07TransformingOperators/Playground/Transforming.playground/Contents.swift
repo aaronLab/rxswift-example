@@ -10,5 +10,17 @@ Observable.of("A", "B", "C")
     })
     .disposed(by: bag)
 
+print("map")
 
+let formatter = NumberFormatter()
+formatter.numberStyle = .spellOut
+
+Observable<Int>.of(123, 4, 56)
+    .map {
+        formatter.string(for: $0) ?? ""
+    }
+    .subscribe(onNext: {
+        print($0)
+    })
+    .disposed(by: bag)
     
