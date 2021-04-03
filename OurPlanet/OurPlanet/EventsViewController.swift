@@ -48,6 +48,8 @@ class EventsViewController: UIViewController, UITableViewDataSource {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    slider.value = 360.0
 
     tableView.rowHeight = UITableView.automaticDimension
     tableView.estimatedRowHeight = 60
