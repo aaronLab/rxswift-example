@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4CC459D1850076701E1B51C8 /* Pods_Wundercast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A016920E177EF3D55E901480 /* Pods_Wundercast.framework */; };
+		A4568FFD26189A040038CC06 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4568FFC26189A040038CC06 /* APIKey.swift */; };
 		CB4D69411DE9A7D100DC0488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D69401DE9A7D100DC0488 /* AppDelegate.swift */; };
 		CB4D69431DE9A7D100DC0488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D69421DE9A7D100DC0488 /* ViewController.swift */; };
 		CB4D69461DE9A7D100DC0488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4D69441DE9A7D100DC0488 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		009D37BB2FF38ADCE091F6EA /* Pods-Wundercast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wundercast.debug.xcconfig"; path = "Target Support Files/Pods-Wundercast/Pods-Wundercast.debug.xcconfig"; sourceTree = "<group>"; };
 		A016920E177EF3D55E901480 /* Pods_Wundercast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wundercast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4568FFC26189A040038CC06 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CB4D693D1DE9A7D100DC0488 /* Wundercast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wundercast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4D69401DE9A7D100DC0488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB4D69421DE9A7D100DC0488 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				CB4D69471DE9A7D100DC0488 /* Assets.xcassets */,
 				CB4D69491DE9A7D100DC0488 /* LaunchScreen.storyboard */,
 				CB4D694C1DE9A7D100DC0488 /* Info.plist */,
+				A4568FFC26189A040038CC06 /* APIKey.swift */,
 			);
 			path = Wundercast;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				CB4D69711DE9C70100DC0488 /* Colors.swift in Sources */,
 				CB4D69411DE9A7D100DC0488 /* AppDelegate.swift in Sources */,
 				CB4D69661DE9AD3300DC0488 /* ApiController.swift in Sources */,
+				A4568FFD26189A040038CC06 /* APIKey.swift in Sources */,
 				CB4D69701DE9C70100DC0488 /* Appearance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
