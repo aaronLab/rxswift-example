@@ -77,6 +77,18 @@ class ActivityController: UITableViewController {
       }
       .share(replay: 1)
     
+    response
+      .filter { response, _ in
+        return 200..<300 ~= response.statusCode
+      }
+      .compactMap { _, data -> [Event]? in
+        return try? JSONDecoder().decode([Event].self, from: data)
+      }
+      .subscribe(onNext: { [weak self] newEvents in
+        self?.processEvents(newEvents)
+      })
+      .disposed(by: bag)
+    
   }
   
   func processEvents(_ newEvents: [Event]) {
