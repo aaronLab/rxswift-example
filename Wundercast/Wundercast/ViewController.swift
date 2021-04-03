@@ -48,20 +48,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         style()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        ApiController.shared.currentWeather(for: "RxSwift")
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] data in
-                self?.tempLabel.text = "\(data.temperature) C"
-                self?.iconLabel.text = data.icon
-                self?.humidityLabel.text = "\(data.humidity)%"
-                self?.cityNameLabel.text = data.cityName
-            })
-            .disposed(by: bag)
         
         let search = searchCityName.rx
             .controlEvent(.editingDidEndOnExit)
@@ -89,6 +75,10 @@ class ViewController: UIViewController {
         search.map(\.cityName)
             .drive(cityNameLabel.rx.text)
             .disposed(by: bag)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
     }
     
