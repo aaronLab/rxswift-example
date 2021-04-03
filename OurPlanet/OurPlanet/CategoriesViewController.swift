@@ -64,7 +64,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
           EONET.events(forLast: 360, category: category)
         })
       }
-      .merge()
+      .merge(maxConcurrent: 2)
     
     eoCategories
       .bind(to: categories)
