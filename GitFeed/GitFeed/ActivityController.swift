@@ -64,7 +64,19 @@ class ActivityController: UITableViewController {
   }
 
   func fetchEvents(repo: String) {
-
+    
+    let response = Observable.from([repo])
+      .map { urlString -> URL in
+        return URL(string: "https//api.github.com/repose/\(urlString)/events")!
+      }
+      .map { url -> URLRequest in
+        return URLRequest(url: url)
+      }
+      .flatMap { request -> Observable<(response: HTTPURLResponse, data: Data)> in
+        return URLSession.shared.rx.response(request: request)
+      }
+      .share(replay: 1)
+    
   }
   
   func processEvents(_ newEvents: [Event]) {
