@@ -67,7 +67,7 @@ class ActivityController: UITableViewController {
     
     let response = Observable.from([repo])
       .map { urlString -> URL in
-        return URL(string: "https//api.github.com/repose/\(urlString)/events")!
+        return URL(string: "https://api.github.com/repos/\(urlString)/events")!
       }
       .map { url -> URLRequest in
         return URLRequest(url: url)
@@ -92,7 +92,18 @@ class ActivityController: UITableViewController {
   }
   
   func processEvents(_ newEvents: [Event]) {
+    var updatedEvents = newEvents + events.value
     
+    if updatedEvents.count > 50 {
+      updatedEvents = [Event](updatedEvents.prefix(upTo: 50))
+    }
+    
+    events.accept(updatedEvents)
+    
+    DispatchQueue.main.async {
+      self.tableView.reloadData()
+      self.refreshControl?.endRefreshing()
+    }
   }
 
   // MARK: - Table Data Source
