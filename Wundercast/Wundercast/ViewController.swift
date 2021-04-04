@@ -40,8 +40,12 @@ class ViewController: UIViewController {
     @IBOutlet private var humidityLabel: UILabel!
     @IBOutlet private var iconLabel: UILabel!
     @IBOutlet private var cityNameLabel: UILabel!
+    @IBOutlet weak var unitsSwitch: UISwitch!
     
     private let bag = DisposeBag()
+    
+    private var cTemp = 0
+    private var isLoaded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,22 +53,66 @@ class ViewController: UIViewController {
         
         style()
         
-        searchCityName.rx.text.orEmpty
+        let search = searchCityName.rx
+            .controlEvent(.editingDidEndOnExit)
+            .map { self.searchCityName.text ?? "" }
             .filter { !$0.isEmpty }
             .flatMap { text in
                 ApiController.shared
                     .currentWeather(for: text)
                     .catchErrorJustReturn(.empty)
             }
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] data in
-                guard let self = self else { return }
-                self.tempLabel.text = "\(data.temperature)° C"
-                self.iconLabel.text = data.icon
-                self.humidityLabel.text = "\(data.humidity)%"
-                self.cityNameLabel.text = data.cityName
-            })
+            .asDriver(onErrorJustReturn: .empty)
+        
+        search.map{ weather in
+            self.cTemp  = weather.temperature
+            self.isLoaded = true
+            
+            if self.unitsSwitch.isOn {
+                return "\(Int(Double(self.cTemp) * 1.8 + 32))° F"
+            } else {
+                return "\(self.cTemp)° C"
+            }
+        }
+        .drive(tempLabel.rx.text)
+        .disposed(by: bag)
+        
+        search.map(\.icon)
+            .drive(iconLabel.rx.text)
             .disposed(by: bag)
+        
+        search.map { "\($0.humidity)%" }
+            .drive(humidityLabel.rx.text)
+            .disposed(by: bag)
+        
+        search.map(\.cityName)
+            .drive(cityNameLabel.rx.text)
+            .disposed(by: bag)
+        
+        let unit = unitsSwitch.rx
+            .controlEvent(.valueChanged)
+            .map { self.unitsSwitch.isOn }
+            .asDriver(onErrorJustReturn: false)
+        
+        unit.map { isOn in
+            if self.isLoaded {
+                
+                if isOn {
+                    // F
+                    return "\(Int(Double(self.cTemp) * 1.8 + 32))° F"
+                } else {
+                    // C
+                    return "\(self.cTemp)° C"
+                }
+                
+            } else {
+                
+                return "T"
+                
+            }
+        }
+        .drive(tempLabel.rx.text)
+        .disposed(by: bag)
     }
     
     override func viewDidAppear(_ animated: Bool) {
