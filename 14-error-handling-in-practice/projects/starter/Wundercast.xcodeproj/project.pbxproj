@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A49CE576261AA45400110073 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49CE575261AA45400110073 /* APIKey.swift */; };
 		CB4D69411DE9A7D100DC0488 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D69401DE9A7D100DC0488 /* AppDelegate.swift */; };
 		CB4D69431DE9A7D100DC0488 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB4D69421DE9A7D100DC0488 /* ViewController.swift */; };
 		CB4D69461DE9A7D100DC0488 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB4D69441DE9A7D100DC0488 /* Main.storyboard */; };
@@ -22,9 +23,13 @@
 		CB63E23A1E34BFFF0066F5BB /* InfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB63E2381E34BFFF0066F5BB /* InfoView.xib */; };
 		CB8945FC1E43CB9400F46229 /* RxReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8945FB1E43CB9400F46229 /* RxReachability.swift */; };
 		CBE130CB1E21CF8400F47C00 /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE130CA1E21CF8400F47C00 /* CLLocationManager+Rx.swift */; };
+		DED37E10B141FFFED3978EAD /* Pods_Wundercast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EF23E99224487222F6A0699 /* Pods_Wundercast.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4EF23E99224487222F6A0699 /* Pods_Wundercast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wundercast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6074CBF55CA5FB50CE7816C2 /* Pods-Wundercast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wundercast.release.xcconfig"; path = "Target Support Files/Pods-Wundercast/Pods-Wundercast.release.xcconfig"; sourceTree = "<group>"; };
+		A49CE575261AA45400110073 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		CB4D693D1DE9A7D100DC0488 /* Wundercast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wundercast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB4D69401DE9A7D100DC0488 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB4D69421DE9A7D100DC0488 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 		CB63E2381E34BFFF0066F5BB /* InfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoView.xib; sourceTree = "<group>"; };
 		CB8945FB1E43CB9400F46229 /* RxReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxReachability.swift; sourceTree = "<group>"; };
 		CBE130CA1E21CF8400F47C00 /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
+		FDBCE8F41103167C26760371 /* Pods-Wundercast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wundercast.debug.xcconfig"; path = "Target Support Files/Pods-Wundercast/Pods-Wundercast.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,18 +55,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED37E10B141FFFED3978EAD /* Pods_Wundercast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13100778F0456037D13BC1AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EF23E99224487222F6A0699 /* Pods_Wundercast.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CB4D69341DE9A7D100DC0488 = {
 			isa = PBXGroup;
 			children = (
 				CB4D69601DE9A7F100DC0488 /* Podfile */,
 				CB4D693F1DE9A7D100DC0488 /* Wundercast */,
 				CB4D693E1DE9A7D100DC0488 /* Products */,
+				F1C057616DB82ACC174D24C0 /* Pods */,
+				13100778F0456037D13BC1AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +129,7 @@
 			children = (
 				CB4D69681DE9AD6200DC0488 /* weather.ttf */,
 				CB4D696A1DE9AD7C00DC0488 /* LICENSE */,
+				A49CE575261AA45400110073 /* APIKey.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -134,6 +152,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		F1C057616DB82ACC174D24C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FDBCE8F41103167C26760371 /* Pods-Wundercast.debug.xcconfig */,
+				6074CBF55CA5FB50CE7816C2 /* Pods-Wundercast.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB4D695A1DE9A7D100DC0488 /* Build configuration list for PBXNativeTarget "Wundercast" */;
 			buildPhases = (
+				F9931A0A3E4D4F6CCD4BE5BF /* [CP] Check Pods Manifest.lock */,
 				CB4D69391DE9A7D100DC0488 /* Sources */,
 				CB4D693A1DE9A7D100DC0488 /* Frameworks */,
 				CB4D693B1DE9A7D100DC0488 /* Resources */,
+				56851DB1983650F5A416919F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,6 +235,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		56851DB1983650F5A416919F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Wundercast/Pods-Wundercast-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Wundercast/Pods-Wundercast-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9931A0A3E4D4F6CCD4BE5BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wundercast-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CB4D69391DE9A7D100DC0488 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -218,6 +294,7 @@
 				CB4D69411DE9A7D100DC0488 /* AppDelegate.swift in Sources */,
 				CB4D69661DE9AD3300DC0488 /* ApiController.swift in Sources */,
 				CB4D69701DE9C70100DC0488 /* Appearance.swift in Sources */,
+				A49CE576261AA45400110073 /* APIKey.swift in Sources */,
 				CB63E2391E34BFFF0066F5BB /* InfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +434,7 @@
 		};
 		CB4D695B1DE9A7D100DC0488 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDBCE8F41103167C26760371 /* Pods-Wundercast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -371,6 +449,7 @@
 		};
 		CB4D695C1DE9A7D100DC0488 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6074CBF55CA5FB50CE7816C2 /* Pods-Wundercast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
