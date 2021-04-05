@@ -25,6 +25,25 @@ enum APIError: Error {
     case unknown
 }
 
+extension APIError: Equatable {
+    
+}
+
+extension APIError {
+    
+    var msg: String {
+        switch self {
+        case .decodingError:
+            return "Decoding error occured"
+        case .httpError(let statusCode):
+            return "Network error occured: \(statusCode) "
+        case .unknown:
+            return "Unknown error occured"
+        }
+    }
+    
+}
+
 struct Request<T: Decodable> {
     
     let request: URLRequest
@@ -40,16 +59,24 @@ extension URLRequest {
             return URLSession.shared.rx.response(request: request.request)
                 .debug("REQUEST LOAD")
                 .subscribe(
-                onNext: { response in
+                onNext: { response, data in
+                    
+                    if (200..<300).contains(response.statusCode) {
+                        
+                        let decoder = JSONDecoder()
+                        let decoded = try? decoder.decode(T.self, from: data)
 
-                    let decoder = JSONDecoder()
-                    let decoded = try? decoder.decode(T.self, from: response.data)
+                        guard let safeDecoded = decoded else {
+                            return observer.onError(APIError.decodingError)
+                        }
 
-                    guard let safeDecoded = decoded else {
-                        return observer.onError(APIError.decodingError)
+                        return observer.onNext(safeDecoded)
+                        
+                    } else {
+                        
+                        return observer.onError(APIError.httpError(response.statusCode))
+                        
                     }
-
-                    return observer.onNext(safeDecoded)
 
                 },
                 onError: { error in
