@@ -18,7 +18,7 @@ class PostListViewController: UITableViewController {
     private let cellIdentifier = "PostListViewCell"
     
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -26,9 +26,9 @@ class PostListViewController: UITableViewController {
     }
     
     // MARK: - Helper
-
+    
     private func configureView() {
-
+        
         title = "Post List"
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -39,7 +39,7 @@ class PostListViewController: UITableViewController {
     private func bindViewModel() {
         viewModel.isLoading
             .subscribe(onNext: { isLoading in
-
+                
                 if !isLoading {
                     
                     DispatchQueue.main.async { [weak self] in
@@ -54,13 +54,17 @@ class PostListViewController: UITableViewController {
         
         viewModel.error
             .subscribe(onNext: { error in
-                print(error)
+                
+                DispatchQueue.main.async { [weak self] in
+                    self?.showToastAlert(title: "\(error.msg)")
+                }
+                
             })
             .disposed(by: bag)
         
         viewModel.loadPostList()
     }
-
+    
 }
 
 // MARK: - Data Source

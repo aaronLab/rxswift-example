@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A40781F4261B118600FE1A28 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40781F3261B118600FE1A28 /* UIViewController+Ext.swift */; };
 		A4DA3298261AE28E0043172E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA3297261AE28E0043172E /* AppDelegate.swift */; };
 		A4DA329A261AE28E0043172E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA3299261AE28E0043172E /* SceneDelegate.swift */; };
 		A4DA32A1261AE2900043172E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DA32A0261AE2900043172E /* Assets.xcassets */; };
@@ -20,8 +21,7 @@
 		A4DA32DC261AEFC10043172E /* URLRequest+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32DB261AEFC10043172E /* URLRequest+Ext.swift */; };
 		A4DA32DF261AF5E90043172E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32DE261AF5E90043172E /* Post.swift */; };
 		A4DA32E3261AF63C0043172E /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32E2261AF63C0043172E /* PostListViewModel.swift */; };
-		A4DA32EF261AF6CF0043172E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32EE261AF6CF0043172E /* BaseModel.swift */; };
-		A4DA32FC261B01DA0043172E /* PostListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32FB261B01DA0043172E /* PostListService.swift */; };
+		A4DA32EF261AF6CF0043172E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32EE261AF6CF0043172E /* BaseService.swift */; };
 		A4DA32FF261B07BC0043172E /* PostListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32FE261B07BC0043172E /* PostListViewCell.swift */; };
 		DF8417C4E20CE0975969413F /* Pods_ExampleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC93C6FA701401DAC1125AD5 /* Pods_ExampleTest.framework */; };
 /* End PBXBuildFile section */
@@ -29,6 +29,7 @@
 /* Begin PBXFileReference section */
 		3B438E101D808D2286C46EC2 /* Pods-ExampleTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleTest.release.xcconfig"; path = "Target Support Files/Pods-ExampleTest/Pods-ExampleTest.release.xcconfig"; sourceTree = "<group>"; };
 		640A83C646BB9BEC64C99A72 /* Pods-ExampleTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleTest.debug.xcconfig"; path = "Target Support Files/Pods-ExampleTest/Pods-ExampleTest.debug.xcconfig"; sourceTree = "<group>"; };
+		A40781F3261B118600FE1A28 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		A4DA3294261AE28E0043172E /* ExampleTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4DA3297261AE28E0043172E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4DA3299261AE28E0043172E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,8 +45,7 @@
 		A4DA32DB261AEFC10043172E /* URLRequest+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Ext.swift"; sourceTree = "<group>"; };
 		A4DA32DE261AF5E90043172E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A4DA32E2261AF63C0043172E /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
-		A4DA32EE261AF6CF0043172E /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
-		A4DA32FB261B01DA0043172E /* PostListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListService.swift; sourceTree = "<group>"; };
+		A4DA32EE261AF6CF0043172E /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		A4DA32FE261B07BC0043172E /* PostListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewCell.swift; sourceTree = "<group>"; };
 		AC93C6FA701401DAC1125AD5 /* Pods_ExampleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,9 +160,8 @@
 			children = (
 				A4DA32C9261AE5440043172E /* PostListViewController.swift */,
 				A4DA32FE261B07BC0043172E /* PostListViewCell.swift */,
-				A4DA32DE261AF5E90043172E /* Post.swift */,
 				A4DA32E2261AF63C0043172E /* PostListViewModel.swift */,
-				A4DA32FB261B01DA0043172E /* PostListService.swift */,
+				A4DA32DE261AF5E90043172E /* Post.swift */,
 			);
 			path = PostListScene;
 			sourceTree = "<group>";
@@ -173,6 +172,7 @@
 				A4DA32C3261AE3FD0043172E /* UIView+Ext.swift */,
 				A4DA32D4261AED050043172E /* UIButton+Ext.swift */,
 				A4DA32DB261AEFC10043172E /* URLRequest+Ext.swift */,
+				A40781F3261B118600FE1A28 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 		A4DA32ED261AF6C90043172E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				A4DA32EE261AF6CF0043172E /* BaseModel.swift */,
+				A4DA32EE261AF6CF0043172E /* BaseService.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -314,13 +314,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4DA32FC261B01DA0043172E /* PostListService.swift in Sources */,
 				A4DA32C4261AE3FD0043172E /* UIView+Ext.swift in Sources */,
+				A40781F4261B118600FE1A28 /* UIViewController+Ext.swift in Sources */,
 				A4DA32CA261AE5440043172E /* PostListViewController.swift in Sources */,
 				A4DA32D5261AED050043172E /* UIButton+Ext.swift in Sources */,
 				A4DA32BE261AE3DB0043172E /* MainViewController.swift in Sources */,
 				A4DA32DF261AF5E90043172E /* Post.swift in Sources */,
-				A4DA32EF261AF6CF0043172E /* BaseModel.swift in Sources */,
+				A4DA32EF261AF6CF0043172E /* BaseService.swift in Sources */,
 				A4DA32D9261AEEFA0043172E /* AlbumListViewController.swift in Sources */,
 				A4DA32D0261AE8050043172E /* ButtonDefaultRounded.swift in Sources */,
 				A4DA3298261AE28E0043172E /* AppDelegate.swift in Sources */,
