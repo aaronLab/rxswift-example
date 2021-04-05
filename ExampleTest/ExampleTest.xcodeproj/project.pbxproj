@@ -17,6 +17,12 @@
 		A4DA32D0261AE8050043172E /* ButtonDefaultRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32CF261AE8050043172E /* ButtonDefaultRounded.swift */; };
 		A4DA32D5261AED050043172E /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32D4261AED050043172E /* UIButton+Ext.swift */; };
 		A4DA32D9261AEEFA0043172E /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32D8261AEEFA0043172E /* AlbumListViewController.swift */; };
+		A4DA32DC261AEFC10043172E /* URLRequest+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32DB261AEFC10043172E /* URLRequest+Ext.swift */; };
+		A4DA32DF261AF5E90043172E /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32DE261AF5E90043172E /* Post.swift */; };
+		A4DA32E3261AF63C0043172E /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32E2261AF63C0043172E /* PostListViewModel.swift */; };
+		A4DA32EF261AF6CF0043172E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32EE261AF6CF0043172E /* BaseModel.swift */; };
+		A4DA32FC261B01DA0043172E /* PostListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32FB261B01DA0043172E /* PostListService.swift */; };
+		A4DA32FF261B07BC0043172E /* PostListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32FE261B07BC0043172E /* PostListViewCell.swift */; };
 		DF8417C4E20CE0975969413F /* Pods_ExampleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC93C6FA701401DAC1125AD5 /* Pods_ExampleTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +41,12 @@
 		A4DA32CF261AE8050043172E /* ButtonDefaultRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefaultRounded.swift; sourceTree = "<group>"; };
 		A4DA32D4261AED050043172E /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
 		A4DA32D8261AEEFA0043172E /* AlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
+		A4DA32DB261AEFC10043172E /* URLRequest+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Ext.swift"; sourceTree = "<group>"; };
+		A4DA32DE261AF5E90043172E /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A4DA32E2261AF63C0043172E /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
+		A4DA32EE261AF6CF0043172E /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		A4DA32FB261B01DA0043172E /* PostListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListService.swift; sourceTree = "<group>"; };
+		A4DA32FE261B07BC0043172E /* PostListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewCell.swift; sourceTree = "<group>"; };
 		AC93C6FA701401DAC1125AD5 /* Pods_ExampleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -136,8 +148,9 @@
 		A4DA32C2261AE3F20043172E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				A4DA32CE261AE7F70043172E /* Views */,
+				A4DA32ED261AF6C90043172E /* Protocols */,
 				A4DA32CD261AE7F00043172E /* Extensions */,
+				A4DA32CE261AE7F70043172E /* Views */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -146,6 +159,10 @@
 			isa = PBXGroup;
 			children = (
 				A4DA32C9261AE5440043172E /* PostListViewController.swift */,
+				A4DA32FE261B07BC0043172E /* PostListViewCell.swift */,
+				A4DA32DE261AF5E90043172E /* Post.swift */,
+				A4DA32E2261AF63C0043172E /* PostListViewModel.swift */,
+				A4DA32FB261B01DA0043172E /* PostListService.swift */,
 			);
 			path = PostListScene;
 			sourceTree = "<group>";
@@ -155,6 +172,7 @@
 			children = (
 				A4DA32C3261AE3FD0043172E /* UIView+Ext.swift */,
 				A4DA32D4261AED050043172E /* UIButton+Ext.swift */,
+				A4DA32DB261AEFC10043172E /* URLRequest+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -173,6 +191,14 @@
 				A4DA32D8261AEEFA0043172E /* AlbumListViewController.swift */,
 			);
 			path = AlbumListScene;
+			sourceTree = "<group>";
+		};
+		A4DA32ED261AF6C90043172E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A4DA32EE261AF6CF0043172E /* BaseModel.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,14 +314,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4DA32FC261B01DA0043172E /* PostListService.swift in Sources */,
 				A4DA32C4261AE3FD0043172E /* UIView+Ext.swift in Sources */,
 				A4DA32CA261AE5440043172E /* PostListViewController.swift in Sources */,
 				A4DA32D5261AED050043172E /* UIButton+Ext.swift in Sources */,
 				A4DA32BE261AE3DB0043172E /* MainViewController.swift in Sources */,
+				A4DA32DF261AF5E90043172E /* Post.swift in Sources */,
+				A4DA32EF261AF6CF0043172E /* BaseModel.swift in Sources */,
 				A4DA32D9261AEEFA0043172E /* AlbumListViewController.swift in Sources */,
 				A4DA32D0261AE8050043172E /* ButtonDefaultRounded.swift in Sources */,
 				A4DA3298261AE28E0043172E /* AppDelegate.swift in Sources */,
+				A4DA32DC261AEFC10043172E /* URLRequest+Ext.swift in Sources */,
 				A4DA329A261AE28E0043172E /* SceneDelegate.swift in Sources */,
+				A4DA32FF261B07BC0043172E /* PostListViewCell.swift in Sources */,
+				A4DA32E3261AF63C0043172E /* PostListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
