@@ -8,6 +8,8 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    // MARK: - Private Properties
 
     private let scrollView: UIScrollView = {
         let sv = UIScrollView()
@@ -34,16 +36,23 @@ class MainViewController: UIViewController {
         btn.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         return btn
     }()
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
     }
+    
+    // MARK: - Actions
 
     @objc private func buttonPressed(_ sender: UIButton) {
 
         if sender == buttonToPostListView {
-            print("Post List View")
+            
+            let vc = PostListViewController()
+            navigationController?.pushViewController(vc, animated: true)
+            
         }
 
         if sender == buttonAlbumsListView {
@@ -51,13 +60,16 @@ class MainViewController: UIViewController {
         }
 
     }
+    
+    // MARK: - Helpers
 
     private func configureViews() {
 
         title = "MVVM Example"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
-
+        
+        // Scroll View
         view.addSubview(scrollView)
         scrollView.fillSuperview()
         scrollView.layoutIfNeeded()
