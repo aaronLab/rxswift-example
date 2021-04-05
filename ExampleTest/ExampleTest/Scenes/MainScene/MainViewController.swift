@@ -22,14 +22,14 @@ class MainViewController: UIViewController {
     }()
 
     private lazy var buttonToPostListView: UIButton = {
-        let btn = UIButton(type: .system)
+        let btn = ButtonDefaultRounded(type: .system)
         btn.setTitle("Posts", for: .normal)
         btn.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         return btn
     }()
 
     private lazy var buttonAlbumsListView: UIButton = {
-        let btn = UIButton(type: .system)
+        let btn = ButtonDefaultRounded(type: .system)
         btn.setTitle("Albums", for: .normal)
         btn.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         return btn
@@ -81,8 +81,9 @@ class MainViewController: UIViewController {
             
             let testView = UIView()
             testView.backgroundColor = .gray
+            testView.layer.cornerRadius = 8.0
             stack.addArrangedSubview(testView)
-            testView.setDimensions(height: 50, width: stack.frame.size.width)
+            testView.setDimensions(height: 50.0, width: stack.frame.size.width)
             
         }
         
