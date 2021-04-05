@@ -203,6 +203,8 @@ class ViewController: UIViewController {
             InfoView.showIn(viewController: self, message: "City Name is invalid")
         case .serverFailure:
             InfoView.showIn(viewController: self, message: "Server error")
+        case .invalidKey:
+            InfoView.showIn(viewController: self, message: "Invalid API key")
         }
     }
 
