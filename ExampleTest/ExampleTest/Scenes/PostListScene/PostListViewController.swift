@@ -8,18 +8,18 @@
 import UIKit
 
 class PostListViewController: UITableViewController {
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
     }
-    
+
     private func configureView() {
-        
+
         title = "Post List"
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+
     }
-    
+
 }

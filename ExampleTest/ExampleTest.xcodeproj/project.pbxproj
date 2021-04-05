@@ -16,6 +16,7 @@
 		A4DA32CA261AE5440043172E /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32C9261AE5440043172E /* PostListViewController.swift */; };
 		A4DA32D0261AE8050043172E /* ButtonDefaultRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32CF261AE8050043172E /* ButtonDefaultRounded.swift */; };
 		A4DA32D5261AED050043172E /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32D4261AED050043172E /* UIButton+Ext.swift */; };
+		A4DA32D9261AEEFA0043172E /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32D8261AEEFA0043172E /* AlbumListViewController.swift */; };
 		DF8417C4E20CE0975969413F /* Pods_ExampleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC93C6FA701401DAC1125AD5 /* Pods_ExampleTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		A4DA32C9261AE5440043172E /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		A4DA32CF261AE8050043172E /* ButtonDefaultRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefaultRounded.swift; sourceTree = "<group>"; };
 		A4DA32D4261AED050043172E /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		A4DA32D8261AEEFA0043172E /* AlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		AC93C6FA701401DAC1125AD5 /* Pods_ExampleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 			children = (
 				A4DA32BC261AE3D00043172E /* MainScene */,
 				A4DA32C8261AE5380043172E /* PostListScene */,
+				A4DA32D7261AEEE70043172E /* AlbumListScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -162,6 +165,14 @@
 				A4DA32CF261AE8050043172E /* ButtonDefaultRounded.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A4DA32D7261AEEE70043172E /* AlbumListScene */ = {
+			isa = PBXGroup;
+			children = (
+				A4DA32D8261AEEFA0043172E /* AlbumListViewController.swift */,
+			);
+			path = AlbumListScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 				A4DA32CA261AE5440043172E /* PostListViewController.swift in Sources */,
 				A4DA32D5261AED050043172E /* UIButton+Ext.swift in Sources */,
 				A4DA32BE261AE3DB0043172E /* MainViewController.swift in Sources */,
+				A4DA32D9261AEEFA0043172E /* AlbumListViewController.swift in Sources */,
 				A4DA32D0261AE8050043172E /* ButtonDefaultRounded.swift in Sources */,
 				A4DA3298261AE28E0043172E /* AppDelegate.swift in Sources */,
 				A4DA329A261AE28E0043172E /* SceneDelegate.swift in Sources */,

@@ -8,14 +8,14 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    
+
     // MARK: - Private Properties
 
     private let scrollView: UIScrollView = {
         let sv = UIScrollView()
         return sv
     }()
-    
+
     private let stack: UIStackView = {
         let s = UIStackView()
         s.axis = .vertical
@@ -36,31 +36,34 @@ class MainViewController: UIViewController {
         btn.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         return btn
     }()
-    
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
     }
-    
+
     // MARK: - Actions
 
     @objc private func buttonPressed(_ sender: UIButton) {
 
         if sender == buttonToPostListView {
-            
+
             let vc = PostListViewController()
+            navigationController?.pushViewController(vc, animated: true)
+
+        }
+
+        if sender == buttonAlbumsListView {
+            
+            let vc = AlbumListViewController()
             navigationController?.pushViewController(vc, animated: true)
             
         }
 
-        if sender == buttonAlbumsListView {
-            print("Album List View")
-        }
-
     }
-    
+
     // MARK: - Helpers
 
     private func configureViews() {
@@ -68,16 +71,18 @@ class MainViewController: UIViewController {
         title = "MVVM Example"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
-        
+
         // Scroll View
         view.addSubview(scrollView)
         scrollView.fillSuperview()
         scrollView.layoutIfNeeded()
 
+        // Stack View
         scrollView.addSubview(stack)
+
         stack.addArrangedSubview(buttonToPostListView)
         stack.addArrangedSubview(buttonAlbumsListView)
-        
+
         stack.anchor(left: scrollView.leftAnchor,
             top: scrollView.topAnchor,
             right: scrollView.rightAnchor,
@@ -88,17 +93,18 @@ class MainViewController: UIViewController {
             paddingBottom: 8)
         stack.setWidth(scrollView.frame.width - 16)
         stack.layoutIfNeeded()
-        
+
+        // Test View
         for _ in 0...20 {
-            
+
             let testView = UIView()
             testView.backgroundColor = .gray
             testView.layer.cornerRadius = 8.0
             stack.addArrangedSubview(testView)
             testView.setDimensions(height: 50.0, width: stack.frame.size.width)
-            
+
         }
-        
+
     }
 
 }
