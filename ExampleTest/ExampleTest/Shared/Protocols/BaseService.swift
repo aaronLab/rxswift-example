@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol BaseModel {
-
+enum Endpoint: String {
+    case posts = "/posts"
 }
 
-extension BaseModel {
+class BaseService {
 
-    func getURL(path: String?) -> URL? {
+    private func getURL(path: String?) -> URL? {
         var urlComponents = URLComponents()
         urlComponents.host = "jsonplaceholder.typicode.com"
         urlComponents.scheme = "HTTPS"
@@ -24,11 +24,11 @@ extension BaseModel {
         return urlComponents.url
     }
     
-    func getRequest(path: String?,
+    func getRequest(path: Endpoint?,
         method: HTTPMethod = .get,
         headers: [String: String] = [:]) -> URLRequest {
 
-        guard let url = getURL(path: path) else {
+        guard let url = getURL(path: path?.rawValue) else {
             fatalError("Invalid URL")
         }
 
@@ -45,12 +45,12 @@ extension BaseModel {
 
     }
 
-    func getRequest<T: Encodable>(path: String?,
+    func getRequest<T: Encodable>(path: Endpoint?,
         method: HTTPMethod,
         headers: [String: String] = [:],
         body: T? = nil) -> URLRequest {
 
-        guard let url = getURL(path: path) else {
+        guard let url = getURL(path: path?.rawValue) else {
             fatalError("Invalid URL")
         }
 
