@@ -13,6 +13,7 @@
 		A4DA32A4261AE2900043172E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4DA32A2261AE2900043172E /* LaunchScreen.storyboard */; };
 		A4DA32BE261AE3DB0043172E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32BD261AE3DB0043172E /* MainViewController.swift */; };
 		A4DA32C4261AE3FD0043172E /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32C3261AE3FD0043172E /* UIView+Ext.swift */; };
+		A4DA32CA261AE5440043172E /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA32C9261AE5440043172E /* PostListViewController.swift */; };
 		DF8417C4E20CE0975969413F /* Pods_ExampleTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC93C6FA701401DAC1125AD5 /* Pods_ExampleTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		A4DA32A5261AE2900043172E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4DA32BD261AE3DB0043172E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A4DA32C3261AE3FD0043172E /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		A4DA32C9261AE5440043172E /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		AC93C6FA701401DAC1125AD5 /* Pods_ExampleTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				A4DA32BC261AE3D00043172E /* MainScene */,
+				A4DA32C8261AE5380043172E /* PostListScene */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -129,6 +132,14 @@
 				A4DA32C3261AE3FD0043172E /* UIView+Ext.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		A4DA32C8261AE5380043172E /* PostListScene */ = {
+			isa = PBXGroup;
+			children = (
+				A4DA32C9261AE5440043172E /* PostListViewController.swift */,
+			);
+			path = PostListScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4DA32C4261AE3FD0043172E /* UIView+Ext.swift in Sources */,
+				A4DA32CA261AE5440043172E /* PostListViewController.swift in Sources */,
 				A4DA32BE261AE3DB0043172E /* MainViewController.swift in Sources */,
 				A4DA3298261AE28E0043172E /* AppDelegate.swift in Sources */,
 				A4DA329A261AE28E0043172E /* SceneDelegate.swift in Sources */,
