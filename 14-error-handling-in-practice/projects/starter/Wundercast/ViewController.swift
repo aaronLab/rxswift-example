@@ -97,12 +97,22 @@ class ViewController: UIViewController {
 
         let textSearch = searchInput.flatMap { text in
             return ApiController.shared.currentWeather(city: text)
-                .do(onNext: { [weak self] data in
-                self?.cache[text] = data
-            })
+                .do(
+                onNext: { [weak self] data in
+                    self?.cache[text] = data
+                },
+                onError: { error in
+                    DispatchQueue.main.async { [weak self] in
+                        
+                        guard let self = self else { return }
+                        self.showError(error: error)
+                        
+                    }
+                }
+            )
                 .retryWhen { e in
                 return e.enumerated().flatMap { attempt, error -> Observable<Int> in
-                    
+
                     print("== retrying after \(attempt + 1) seconds ==")
 
                     if attempt >= maxAttempts - 1 {
@@ -180,6 +190,20 @@ class ViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.destructive))
 
         self.present(alert, animated: true)
+    }
+    
+    private func showError(error e: Error) {
+        guard let e = e as? ApiController.ApiError else {
+            InfoView.showIn(viewController: self, message: "An error occurred")
+            return
+        }
+        
+        switch e {
+        case .cityNotFound:
+            InfoView.showIn(viewController: self, message: "City Name is invalid")
+        case .serverFailure:
+            InfoView.showIn(viewController: self, message: "Server error")
+        }
     }
 
     // MARK: - Style
