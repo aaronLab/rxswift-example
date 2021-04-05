@@ -8,18 +8,84 @@
 import UIKit
 
 class MainViewController: UIViewController {
+
+    private let scrollView: UIScrollView = {
+        let sv = UIScrollView()
+        return sv
+    }()
     
+    private let stack: UIStackView = {
+        let s = UIStackView()
+        s.axis = .vertical
+        s.spacing = 16.0
+        return s
+    }()
+
+    private lazy var buttonToPostListView: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("Posts", for: .normal)
+        btn.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        return btn
+    }()
+
+    private lazy var buttonAlbumsListView: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("Albums", for: .normal)
+        btn.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        return btn
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
     }
-    
+
+    @objc private func buttonPressed(_ sender: UIButton) {
+
+        if sender == buttonToPostListView {
+            print("Post List View")
+        }
+
+        if sender == buttonAlbumsListView {
+            print("Album List View")
+        }
+
+    }
+
     private func configureViews() {
-        
+
         title = "MVVM Example"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .white
+
+        view.addSubview(scrollView)
+        scrollView.fillSuperview()
+        scrollView.layoutIfNeeded()
+
+        scrollView.addSubview(stack)
+        stack.addArrangedSubview(buttonToPostListView)
+        stack.addArrangedSubview(buttonAlbumsListView)
+        
+        stack.anchor(left: scrollView.leftAnchor,
+            top: scrollView.topAnchor,
+            right: scrollView.rightAnchor,
+            bottom: scrollView.bottomAnchor,
+            paddingLeft: 8,
+            paddingTop: 8,
+            paddingRight: 8,
+            paddingBottom: 8)
+        stack.setWidth(scrollView.frame.width - 16)
+        stack.layoutIfNeeded()
+        
+        for _ in 0...20 {
+            
+            let testView = UIView()
+            testView.backgroundColor = .gray
+            stack.addArrangedSubview(testView)
+            testView.setDimensions(height: 50, width: stack.frame.size.width)
+            
+        }
         
     }
-    
+
 }
