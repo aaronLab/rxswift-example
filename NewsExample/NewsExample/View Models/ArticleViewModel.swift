@@ -21,6 +21,10 @@ extension ArticleListViewModel {
         self.articlesVM = articles.compactMap(ArticleViewModel.init)
     }
     
+    var count: Int {
+        return articlesVM.count
+    }
+    
 }
 
 extension ArticleListViewModel {

@@ -17,6 +17,7 @@
 		A4DA327B261ACD200043172E /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA327A261ACD200043172E /* Article.swift */; };
 		A4DA3280261ACE070043172E /* URLRequest+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA327F261ACE070043172E /* URLRequest+Ext.swift */; };
 		A4DA3286261ACFAA0043172E /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA3285261ACFAA0043172E /* ArticleViewModel.swift */; };
+		A4DA3289261AD1890043172E /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4DA3288261AD1890043172E /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		A4DA327A261ACD200043172E /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		A4DA327F261ACE070043172E /* URLRequest+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Ext.swift"; sourceTree = "<group>"; };
 		A4DA3285261ACFAA0043172E /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		A4DA3288261AD1890043172E /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		ED10B1977811B90FAD7A6E15 /* Pods-NewsExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsExample.release.xcconfig"; path = "Target Support Files/Pods-NewsExample/Pods-NewsExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				A4DA327F261ACE070043172E /* URLRequest+Ext.swift */,
+				A4DA3288261AD1890043172E /* UIView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4DA3289261AD1890043172E /* UIView+Ext.swift in Sources */,
 				A4033FD5261AB0CE0022B154 /* NewsTableViewController.swift in Sources */,
 				A4DA3280261ACE070043172E /* URLRequest+Ext.swift in Sources */,
 				A4033FD1261AB0CE0022B154 /* AppDelegate.swift in Sources */,
